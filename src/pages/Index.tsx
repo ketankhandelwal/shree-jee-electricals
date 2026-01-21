@@ -5,6 +5,8 @@ import BrandBanner from "@/components/BrandBanner";
 import Categories from "@/components/Categories";
 import Products from "@/components/Products";
 import ShopTheLook from "@/components/ShopTheLook";
+import HomeOwnersLove from "@/components/HomeOwnersLove";
+import RightLightRightRoom from "@/components/RightLightRightRoom";
 import Testimonials from "@/components/Testimonials";
 import TrustBadges from "@/components/TrustBadges";
 import Newsletter from "@/components/Newsletter";
@@ -21,6 +23,8 @@ const Index = () => {
         <Categories />
         <Products />
         <ShopTheLook />
+        <HomeOwnersLove />
+        <RightLightRightRoom />
         <Testimonials />
         <TrustBadges />
         <Newsletter />
