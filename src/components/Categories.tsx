@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import chandelierImg from "@/assets/chandelier.jpg";
 import ceilingImg from "@/assets/ceiling-light.jpg";
 import smartBulbImg from "@/assets/smart-bulb.jpg";
@@ -8,18 +9,18 @@ import outdoorImg from "@/assets/outdoor-light.jpg";
 import bedroomImg from "@/assets/bedroom.jpg";
 
 const categories = [
-  { name: "Chandeliers", image: chandelierImg },
-  { name: "Ceiling Lights", image: ceilingImg },
-  { name: "Smart Lights", image: smartBulbImg },
-  { name: "Wall Lights", image: wallLightImg },
-  { name: "Table Lamps", image: tableLampImg },
-  { name: "Pendant Lights", image: pendantImg },
-  { name: "Hanging Lights", image: pendantImg },
-  { name: "Outdoor Lights", image: outdoorImg },
-  { name: "Bedroom Lights", image: bedroomImg },
-  { name: "LED Bulbs", image: smartBulbImg },
-  { name: "Strip Lights", image: wallLightImg },
-  { name: "Floor Lamps", image: tableLampImg },
+  { name: "Chandeliers", image: chandelierImg, slug: "chandeliers" },
+  { name: "Ceiling Lights", image: ceilingImg, slug: "ceiling-lights" },
+  { name: "Smart Lights", image: smartBulbImg, slug: "smart-lights" },
+  { name: "Wall Lights", image: wallLightImg, slug: "wall-lights" },
+  { name: "Table Lamps", image: tableLampImg, slug: "table-lamps" },
+  { name: "Pendant Lights", image: pendantImg, slug: "pendant-lights" },
+  { name: "Hanging Lights", image: pendantImg, slug: "hanging-lights" },
+  { name: "Outdoor Lights", image: outdoorImg, slug: "outdoor-lights" },
+  { name: "Bedroom Lights", image: bedroomImg, slug: "bedroom-lights" },
+  { name: "LED Bulbs", image: smartBulbImg, slug: "led-bulbs" },
+  { name: "Strip Lights", image: wallLightImg, slug: "strip-lights" },
+  { name: "Floor Lamps", image: tableLampImg, slug: "floor-lamps" },
 ];
 
 const Categories = () => {
@@ -33,9 +34,9 @@ const Categories = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8">
           {categories.map((category, index) => (
-            <a
+            <Link
               key={index}
-              href="#"
+              to={`/category/${category.slug}`}
               className="flex flex-col items-center group"
             >
               <div className="category-circle mb-3">
@@ -48,7 +49,7 @@ const Categories = () => {
               <span className="text-sm md:text-base font-medium text-foreground group-hover:text-primary transition-colors text-center">
                 {category.name}
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
