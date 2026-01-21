@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import chandelierImg from "@/assets/chandelier.jpg";
@@ -17,6 +18,7 @@ const products = [
     originalPrice: 17499,
     discount: 29,
     rating: 4.7,
+    category: "chandeliers",
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const products = [
     originalPrice: 7300,
     discount: 38,
     rating: 4.5,
+    category: "ceiling-lights",
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const products = [
     originalPrice: 1299,
     discount: 31,
     rating: 4.8,
+    category: "smart-lights",
   },
   {
     id: 4,
@@ -44,6 +48,7 @@ const products = [
     originalPrice: 4500,
     discount: 33,
     rating: 4.6,
+    category: "wall-lights",
   },
   {
     id: 5,
@@ -53,6 +58,7 @@ const products = [
     originalPrice: 5000,
     discount: 30,
     rating: 4.4,
+    category: "table-lamps",
   },
   {
     id: 6,
@@ -62,6 +68,7 @@ const products = [
     originalPrice: 8500,
     discount: 29,
     rating: 4.7,
+    category: "pendant-lights",
   },
 ];
 
@@ -104,9 +111,10 @@ const Products = () => {
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-hidden">
             {products.slice(startIndex, startIndex + visibleCount).map((product) => (
-              <div
+              <Link
+                to={`/category/${product.category}`}
                 key={product.id}
-                className="bg-card rounded-lg shadow-md overflow-hidden card-hover group"
+                className="bg-card rounded-lg shadow-md overflow-hidden card-hover group cursor-pointer"
               >
                 <div className="relative aspect-square bg-muted p-4">
                   <img
@@ -137,15 +145,17 @@ const Products = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
 
         <div className="flex justify-center mt-10">
-          <Button variant="outline" className="btn-outline px-12">
-            All Products
-          </Button>
+          <Link to="/category/ceiling-lights">
+            <Button variant="outline" className="btn-outline px-12">
+              All Products
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
