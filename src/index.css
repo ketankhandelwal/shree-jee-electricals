@@ -15,11 +15,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 210 100% 35%;
+    --primary: 43 75% 55%; /* Rich Logo Gold */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 92% 62%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 43 92% 45%; /* Darker Gold */
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 210 20% 96%;
     --muted-foreground: 215 15% 45%;
@@ -37,11 +37,11 @@
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --header-bg: 210 100% 35%;
-    --header-foreground: 0 0% 100%;
-    --announcement-bg: 210 100% 30%;
-    --footer-bg: 210 80% 15%;
-    --footer-accent: 210 80% 22%;
+    --header-bg: 0 0% 0%; /* Pure Black */
+    --header-foreground: 43 75% 55%; /* Gold */
+    --announcement-bg: 43 75% 45%; /* Dark Gold */
+    --footer-bg: 0 0% 0%; /* Pure Black */
+    --footer-accent: 43 75% 20%; /* Very Dark Gold */
     --gold: 43 92% 62%;
     --gold-dark: 43 85% 50%;
     --success: 142 70% 45%;
@@ -85,11 +85,11 @@
     --input: 215 20% 20%;
     --ring: 210 100% 50%;
 
-    --header-bg: 210 100% 30%;
-    --header-foreground: 0 0% 100%;
-    --announcement-bg: 210 100% 25%;
-    --footer-bg: 210 80% 10%;
-    --footer-accent: 210 80% 15%;
+    --header-bg: 0 0% 0%;
+    --header-foreground: 43 75% 55%;
+    --announcement-bg: 43 75% 40%;
+    --footer-bg: 0 0% 0%;
+    --footer-accent: 43 75% 15%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -146,8 +146,8 @@
     @apply w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:scale-105;
   }
 
-  .gradient-blue {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(210, 100%, 25%) 100%);
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(43 75% 55%) 0%, hsl(43 92% 45%) 100%);
   }
 
   .gradient-footer {

@@ -21,7 +21,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-6 md:py-8 bg-blue-50 border-b border-border">
+    <section className="py-6 md:py-8 bg-gold/5 border-b border-border">
       <div className="container mx-auto px-4">
         {/* Use grid-cols-3 to force horizontal layout on all screens */}
         <div className="grid grid-cols-3 gap-2 md:gap-6">

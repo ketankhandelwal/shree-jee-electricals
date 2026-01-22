@@ -90,7 +90,7 @@ const RightLightRightRoom = () => {
 
         {/* All Products Button */}
         <div className="text-center mt-4">
-          <button className="px-12 py-3 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-colors font-bold">
+          <button className="px-12 py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-colors font-bold">
             All Products
           </button>
         </div>

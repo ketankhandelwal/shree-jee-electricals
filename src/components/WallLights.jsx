@@ -88,7 +88,7 @@ const WallLights = () => {
                       <span className="text-xs md:text-sm text-gray-400 line-through">
                         Rs. {product.originalPrice}
                       </span>
-                      <span className="text-blue-600 font-bold text-xs md:text-sm">
+                      <span className="text-primary font-bold text-xs md:text-sm">
                         -{product.discount}% off
                       </span>
                     </div>
@@ -101,7 +101,7 @@ const WallLights = () => {
 
         <div className="flex justify-center mt-8 md:mt-12">
           <Link to="/all-products" className="w-full md:w-auto px-4">
-            <button className="w-full md:px-24 py-3 md:py-2 border-2 border-blue-600 text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-colors">
+            <button className="w-full md:px-24 py-3 md:py-2 border-2 border-primary text-primary rounded-full font-bold hover:bg-gold/10 transition-colors">
               All products
             </button>
           </Link>

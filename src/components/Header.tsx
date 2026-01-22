@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search, ShoppingCart, Heart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +27,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300">
       {/* Announcement Bar: Animate height instead of hiding to prevent layout jumps */}
-      <div className={`bg-blue-950 text-white transition-all duration-300 overflow-hidden flex items-center justify-center ${
+      <div className={`bg-black text-white transition-all duration-300 overflow-hidden flex items-center justify-center ${
         scrolled ? "h-0" : "h-10"
       }`}>
         <p className="text-[10px] md:text-xs font-medium tracking-wider px-4 text-center">
-          Free Delivery above ₹4,999 • <span className="text-amber-400 font-bold">Diwali Sale Live!</span>
+          Free Delivery above ₹4,999 • <span className="text-primary font-bold">Diwali Sale Live!</span>
         </p>
       </div>
 
@@ -44,17 +45,14 @@ const Header = () => {
           <div className="flex items-center justify-between h-14">
             
             {/* Logo */}
-            <a href="/" className="flex flex-col group">
-              <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none transition-colors ${
-                scrolled ? "text-gray-900" : "text-white"
-              }`}>
-                SHREE JEE
-              </span>
-              <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${
-                scrolled ? "text-blue-600" : "text-blue-300"
-              }`}>
-                Electricals
-              </span>
+            <a href="/" className="flex items-center group">
+              <img 
+                src={logo} 
+                alt="SHREE JEE Electricals" 
+                className={`transition-all duration-300 ${
+                  scrolled ? "h-10" : "h-20"
+                }`}
+              />
             </a>
 
             {/* Desktop Nav */}
@@ -64,11 +62,11 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className={`text-sm font-bold uppercase tracking-wide transition-colors relative group ${
-                    scrolled ? "text-gray-700 hover:text-blue-600" : "text-white/90 hover:text-white"
+                    scrolled ? "text-gray-700 hover:text-primary" : "text-white/90 hover:text-white"
                   }`}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
                 </a>
               ))}
             </nav>
@@ -80,7 +78,7 @@ const Header = () => {
               </Button>
               <Button variant="ghost" size="icon" className={`relative rounded-full ${scrolled ? "text-gray-700" : "text-white"}`}>
                 <ShoppingCart className="h-5 w-5" />
-                <span className="absolute top-1 right-1 bg-blue-600 text-white text-[10px] h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                <span className="absolute top-1 right-1 bg-primary text-white text-[10px] h-4 w-4 rounded-full flex items-center justify-center">0</span>
               </Button>
               <Button
                 variant="ghost"
@@ -99,7 +97,7 @@ const Header = () => {
       <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="p-6">
           <div className="flex justify-between items-center mb-10">
-            <span className="text-2xl font-black text-gray-900">SHREE JEE</span>
+            <img src={logo} alt="SHREE JEE" className="h-10" />
             <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
               <X className="h-8 w-8 text-gray-900" />
             </Button>

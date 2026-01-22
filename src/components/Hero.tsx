@@ -158,7 +158,7 @@ const Hero = () => {
               }`}
             >
               {slide.badge && (
-                <span className="inline-block px-4 py-1.5 bg-blue-600/90 backdrop-blur-sm text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full shadow-md">
+                <span className="inline-block px-4 py-1.5 bg-primary/90 backdrop-blur-sm text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-full shadow-md">
                   {slide.badge}
                 </span>
               )}
@@ -173,7 +173,7 @@ const Hero = () => {
 
               <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6 pt-4 sm:pt-6">
                 {slide.discount && (
-                  <span className="text-amber-300 sm:text-amber-400 font-bold text-lg sm:text-xl italic drop-shadow-lg">
+                  <span className="text-primary sm:text-primary font-bold text-lg sm:text-xl italic drop-shadow-lg">
                     {slide.discount}
                   </span>
                 )}

@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
           <div className="flex flex-wrap justify-between items-center gap-8">
             <a href="#" className="flex items-center gap-4 group">
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-blue-600 transition-colors">
+              <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
@@ -29,17 +29,17 @@ const Footer = () => {
             </a>
 
             <a href="#" className="flex items-center gap-4 group">
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-blue-600 transition-colors">
+              <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Support</p>
-                <span className="text-sm font-bold">1800-123-4567</span>
+                <span className="text-sm font-bold">+917275401715</span>
               </div>
             </a>
 
             <a href="#" className="flex items-center gap-4 group">
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-blue-600 transition-colors">
+              <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
@@ -49,7 +49,7 @@ const Footer = () => {
             </a>
 
             <a href="#" className="flex items-center gap-4 group">
-              <div className="p-3 rounded-full bg-white/5 group-hover:bg-blue-600 transition-colors">
+              <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Download className="w-6 h-6" />
               </div>
               <div>
@@ -70,7 +70,7 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <div className="mb-6">
                 <h3 className="text-2xl font-black tracking-tighter">SHREE JEE</h3>
-                <p className="text-[10px] font-bold text-blue-500 tracking-[0.3em] uppercase">Electrical</p>
+                <p className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase">Electrical</p>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8">
                 Illuminating spaces with elegance since 2010. We provide premium, energy-efficient lighting solutions tailored for modern Indian homes and commercial spaces.
@@ -89,7 +89,7 @@ const Footer = () => {
               <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-white">Products</h4>
               <div className="grid grid-cols-1 gap-3">
                 {productCategories.slice(0, 6).map((category) => (
-                  <a key={category} href="#" className="text-gray-400 hover:text-blue-500 transition-colors text-sm">
+                  <a key={category} href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     {category}
                   </a>
                 ))}
@@ -100,7 +100,7 @@ const Footer = () => {
               <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-white invisible hidden lg:block">More Products</h4>
               <div className="grid grid-cols-1 gap-3 lg:mt-0">
                 {productCategories.slice(6).map((category) => (
-                  <a key={category} href="#" className="text-gray-400 hover:text-blue-500 transition-colors text-sm">
+                  <a key={category} href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     {category}
                   </a>
                 ))}
@@ -111,7 +111,7 @@ const Footer = () => {
               <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-white">Company</h4>
               <div className="space-y-3">
                 {aboutLinks.map((link) => (
-                  <a key={link} href="#" className="block text-gray-400 hover:text-blue-500 transition-colors text-sm">
+                  <a key={link} href="#" className="block text-gray-400 hover:text-primary transition-colors text-sm">
                     {link}
                   </a>
                 ))}
