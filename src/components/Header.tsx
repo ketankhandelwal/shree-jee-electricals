@@ -1,161 +1,117 @@
-import { useState } from "react";
-import { Search, User, ShoppingCart, Heart, Menu, X, ChevronDown } from "lucide-react";
+"use client";
+
+import { useState, useEffect } from "react";
+import { Search, ShoppingCart, Heart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { name: "Home", href: "#" },
-    { name: "Products", href: "#products", hasDropdown: true },
-    { name: "Categories", href: "#categories" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Smart Lighting", href: "#" },
+    { name: "LED Strips", href: "#" },
+    { name: "Ceiling Lights", href: "#" },
+    { name: "Fans", href: "#" },
+    { name: "Offers", href: "#" },
   ];
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* Announcement Bar */}
-      <div className="bg-announcement py-2 px-4">
-        <p className="text-center text-primary-foreground text-sm font-medium">
-          🎉 Sale Live now! Get up to 40% off on all lighting products
+    <header className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300">
+      {/* Announcement Bar: Animate height instead of hiding to prevent layout jumps */}
+      <div className={`bg-blue-950 text-white transition-all duration-300 overflow-hidden flex items-center justify-center ${
+        scrolled ? "h-0" : "h-10"
+      }`}>
+        <p className="text-[10px] md:text-xs font-medium tracking-wider px-4 text-center">
+          Free Delivery above ₹4,999 • <span className="text-amber-400 font-bold">Diwali Sale Live!</span>
         </p>
       </div>
 
-      {/* Main Header */}
-      <div className="bg-header shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
+      {/* Main Navbar */}
+      <div className={`transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-md py-2" 
+          : "bg-gradient-to-b from-black/60 to-transparent py-4"
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="flex items-center justify-between h-14">
+            
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <a href="#" className="flex flex-col items-start">
-                <span className="text-xl md:text-2xl font-bold text-header-foreground">
-                  Shree Jee
-                </span>
-                <span className="text-xs md:text-sm text-header-foreground/80 -mt-1">
-                  Electrical
-                </span>
-              </a>
-            </div>
+            <a href="/" className="flex flex-col group">
+              <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none transition-colors ${
+                scrolled ? "text-gray-900" : "text-white"
+              }`}>
+                SHREE JEE
+              </span>
+              <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${
+                scrolled ? "text-blue-600" : "text-blue-300"
+              }`}>
+                Electricals
+              </span>
+            </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center text-header-foreground hover:text-secondary transition-colors font-medium"
+                  className={`text-sm font-bold uppercase tracking-wide transition-colors relative group ${
+                    scrolled ? "text-gray-700 hover:text-blue-600" : "text-white/90 hover:text-white"
+                  }`}
                 >
                   {item.name}
-                  {item.hasDropdown && <ChevronDown className="ml-1 w-4 h-4" />}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
                 </a>
               ))}
             </nav>
 
-            {/* Search Bar - Desktop */}
-            <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
-              <div className="relative w-full">
-                <Input
-                  type="text"
-                  placeholder="Search products"
-                  className="w-full pl-4 pr-12 py-2 rounded-lg bg-primary-foreground text-foreground border-0"
-                />
-                <Button
-                  size="icon"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary hover:bg-primary/90"
-                >
-                  <Search className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Icons */}
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden text-header-foreground hover:bg-header-foreground/10"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-              >
-                <Search className="w-5 h-5" />
+            {/* Actions */}
+            <div className="flex items-center gap-1">
+              <Button variant="ghost" size="icon" className={`rounded-full ${scrolled ? "text-gray-700" : "text-white"}`}>
+                <Search className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className={`relative rounded-full ${scrolled ? "text-gray-700" : "text-white"}`}>
+                <ShoppingCart className="h-5 w-5" />
+                <span className="absolute top-1 right-1 bg-blue-600 text-white text-[10px] h-4 w-4 rounded-full flex items-center justify-center">0</span>
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-header-foreground hover:bg-header-foreground/10"
+                className={`lg:hidden ${scrolled ? "text-gray-900" : "text-white"}`}
+                onClick={() => setIsMenuOpen(true)}
               >
-                <User className="w-5 h-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-header-foreground hover:bg-header-foreground/10 relative"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center font-bold">
-                  0
-                </span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:flex text-header-foreground hover:bg-header-foreground/10 relative"
-              >
-                <Heart className="w-5 h-5" />
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-secondary text-secondary-foreground text-xs rounded-full flex items-center justify-center font-bold">
-                  0
-                </span>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden text-header-foreground hover:bg-header-foreground/10"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                <Menu className="h-6 w-6" />
               </Button>
             </div>
           </div>
-
-          {/* Mobile Search */}
-          {isSearchOpen && (
-            <div className="md:hidden pb-4 animate-fadeIn">
-              <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Search products"
-                  className="w-full pl-4 pr-12 py-2 rounded-lg bg-primary-foreground text-foreground border-0"
-                />
-                <Button
-                  size="icon"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary hover:bg-primary/90"
-                >
-                  <Search className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-          )}
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="lg:hidden border-t border-header-foreground/10 animate-fadeIn">
-            <div className="container mx-auto px-4 py-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center justify-between py-3 text-header-foreground hover:text-secondary transition-colors font-medium border-b border-header-foreground/10 last:border-0"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </a>
-              ))}
-            </div>
+      {/* Mobile Sidebar Menu */}
+      <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="p-6">
+          <div className="flex justify-between items-center mb-10">
+            <span className="text-2xl font-black text-gray-900">SHREE JEE</span>
+            <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
+              <X className="h-8 w-8 text-gray-900" />
+            </Button>
+          </div>
+          <nav className="flex flex-col gap-6">
+            {navItems.map((item) => (
+              <a key={item.name} href={item.href} className="text-2xl font-bold text-gray-800" onClick={() => setIsMenuOpen(false)}>
+                {item.name}
+              </a>
+            ))}
           </nav>
-        )}
+        </div>
       </div>
     </header>
   );

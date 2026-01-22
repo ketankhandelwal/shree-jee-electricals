@@ -13,19 +13,19 @@ const rooms = [
 ];
 
 const roomImages: Record<string, string> = {
-  kitchen: product1,
-  bathroom: product2,
-  living: livingRoomImg,
-  outdoor: product1,
-  entertainment: bedroomImg,
+  kitchen: "https://images.unsplash.com/photo-1718221621618-e477ce33485a?q=80&w=1778&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  bathroom: "https://images.unsplash.com/photo-1666585607888-3f6fe0b323d8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMGxpZ2h0aW5nfGVufDB8fDB8fHww",
+  living: "https://images.unsplash.com/photo-1546555802-01af0341ec23?q=80&w=1794&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  outdoor: "https://images.unsplash.com/photo-1628592102751-ba83b0314276?q=80&w=2194&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  entertainment: "https://images.unsplash.com/photo-1541701768-a3d67ec0bc0a?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 const ShopTheLook = () => {
   const [activeRoom, setActiveRoom] = useState("living");
 
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-white">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-10">
           Shop The Look
         </h2>

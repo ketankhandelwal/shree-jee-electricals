@@ -11,6 +11,9 @@ import Testimonials from "@/components/Testimonials";
 import TrustBadges from "@/components/TrustBadges";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
+import BestSellers from "@/components/BestSellers";
+import WallLights from "@/components/WallLights";
+import Inspirations from "@/components/Inspirations";
 
 const Index = () => {
   return (
@@ -22,9 +25,12 @@ const Index = () => {
         <BrandBanner />
         <Categories />
         <Products />
+        <BestSellers />
+        <WallLights />
         <ShopTheLook />
         <HomeOwnersLove />
         <RightLightRightRoom />
+        <Inspirations />
         <Testimonials />
         <TrustBadges />
         <Newsletter />
