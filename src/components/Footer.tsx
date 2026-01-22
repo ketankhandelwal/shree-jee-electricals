@@ -13,7 +13,7 @@ const aboutLinks = [
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-[#0a0a0a] text-white">
+    <footer className="bg-[#0a0a0a] text-white">
       {/* 1. High-Level Quick Contact Bar */}
       <div className="border-b border-white/10 py-12">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
@@ -110,11 +110,16 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-white">Company</h4>
               <div className="space-y-3">
-                {aboutLinks.map((link) => (
-                  <a key={link} href="#" className="block text-gray-400 hover:text-primary transition-colors text-sm">
-                    {link}
-                  </a>
-                ))}
+                {aboutLinks.map((link) => {
+                  let href = "#";
+                  if (link === "About Us") href = "/about";
+                  if (link === "Contact Us") href = "/contact";
+                  return (
+                    <a key={link} href={href} className="block text-gray-400 hover:text-primary transition-colors text-sm">
+                      {link}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 

@@ -15,10 +15,12 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 43 75% 55%; /* Rich Logo Gold */
+    --primary: 43 75% 55%;
+    /* Rich Logo Gold */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 92% 45%; /* Darker Gold */
+    --secondary: 43 92% 45%;
+    /* Darker Gold */
     --secondary-foreground: 0 0% 0%;
 
     --muted: 210 20% 96%;
@@ -37,11 +39,16 @@
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --header-bg: 0 0% 0%; /* Pure Black */
-    --header-foreground: 43 75% 55%; /* Gold */
-    --announcement-bg: 43 75% 45%; /* Dark Gold */
-    --footer-bg: 0 0% 0%; /* Pure Black */
-    --footer-accent: 43 75% 20%; /* Very Dark Gold */
+    --header-bg: 0 0% 0%;
+    /* Pure Black */
+    --header-foreground: 43 75% 55%;
+    /* Gold */
+    --announcement-bg: 43 75% 45%;
+    /* Dark Gold */
+    --footer-bg: 0 0% 0%;
+    /* Pure Black */
+    --footer-accent: 43 75% 20%;
+    /* Very Dark Gold */
     --gold: 43 92% 62%;
     --gold-dark: 43 85% 50%;
     --success: 142 70% 45%;
@@ -147,7 +154,28 @@
   }
 
   .gradient-gold {
-    background: linear-gradient(135deg, hsl(43 75% 55%) 0%, hsl(43 92% 45%) 100%);
+    background: linear-gradient(135deg,
+        hsl(43 75% 55%) 0%,
+        hsl(43 92% 62%) 25%,
+        hsl(43 75% 45%) 50%,
+        hsl(43 92% 62%) 75%,
+        hsl(43 75% 55%) 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .gradient-footer {
@@ -168,13 +196,27 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Custom scrollbar */

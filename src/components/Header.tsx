@@ -17,11 +17,10 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Smart Lighting", href: "#" },
-    { name: "LED Strips", href: "#" },
-    { name: "Ceiling Lights", href: "#" },
-    { name: "Fans", href: "#" },
-    { name: "Offers", href: "#" },
+    { name: "Products", href: "/#categories" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Offers", href: "/#bestsellers" },
   ];
 
   return (
