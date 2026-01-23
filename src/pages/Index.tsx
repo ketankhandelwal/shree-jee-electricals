@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import BestSellers from "@/components/BestSellers";
 import WallLights from "@/components/WallLights";
 import Inspirations from "@/components/Inspirations";
+import Partners from "@/components/Partners";
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
         <HomeOwnersLove />
         <RightLightRightRoom />
         <Inspirations />
+        <Partners />
         <Testimonials />
         <TrustBadges />
         <Newsletter />
