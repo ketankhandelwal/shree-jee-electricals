@@ -15,7 +15,6 @@ import BestSellers from "@/components/BestSellers";
 import WallLights from "@/components/WallLights";
 import Inspirations from "@/components/Inspirations";
 import Partners from "@/components/Partners";
-
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
