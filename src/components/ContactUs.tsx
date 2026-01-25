@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const ContactUs = () => {
+  const mapUrl = "https://www.google.com/maps/dir//Schneider+electric+-+Shree+Jee+Electricals,+Infront+of+Janta+Tent+House,+Bhagwa+Chungi,+Dali+pur,+Bela+Pratapgarh,+Uttar+Pradesh+230001/@25.9142951,81.993651,19.81z/data=!4m8!4m7!1m0!1m5!1m1!1s0x399a913c1ef00ee9:0x6f48104f7a110604!2m2!1d81.9938561!2d25.9159735?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D";
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
@@ -40,22 +42,34 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="text-gray-900 font-bold mb-1">Email Us</h4>
-                  <p className="text-gray-500 font-medium">support@shreejee.com</p>
+                  <p className="text-gray-500 font-medium">Shreejeelightguru@gmail.com</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
-                  <MapPin className="w-6 h-6 text-primary group-hover:text-white" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-6 group">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+                    <MapPin className="w-6 h-6 text-primary group-hover:text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-gray-900 font-bold mb-1">Visit Us</h4>
+                    <p className="text-gray-500 font-medium whitespace-pre-line">
+                      Shree Jee Electricals, 
+                      In-Front of Janta Tent House,
+                      Balipur,Pratapgarh, 
+                      Uttar Pradesh, India
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-gray-900 font-bold mb-1">Visit Us</h4>
-                  <p className="text-gray-500 font-medium whitespace-pre-line">
-                    Shree Jee Electricals, 
-                    Main Road, City Center,
-                    Lucknow, India
-                  </p>
-                </div>
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black hover:bg-primary text-white px-5 py-2.5 rounded-xl font-semibold transition-all text-sm ml-[72px]"
+                >
+                  <MapPin size={16} />
+                  Get Directions
+                </a>
               </div>
             </div>
 

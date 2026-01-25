@@ -75,7 +75,7 @@ const AboutPage = () => {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
                 <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">Excellence Since 1995</span>
+                <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">Excellence Since 2014</span>
               </div>
               <h1 className="text-5xl md:text-8xl font-black text-gray-900 leading-[1.05] tracking-tighter">
                 Crafting <br />
@@ -142,12 +142,12 @@ const AboutPage = () => {
                 </h3>
                 <div className="space-y-4 text-sm md:text-base font-medium">
                   <div className="flex justify-between border-b border-gray-200 pb-3">
-                    <span className="text-gray-400 uppercase tracking-widest text-xs">Mon — Sat</span>
+                    <span className="text-gray-400 uppercase tracking-widest text-xs">SUN-FRI</span>
                     <span className="text-gray-900">10:00 AM - 08:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400 uppercase tracking-widest text-xs">Sunday</span>
-                    <span className="text-primary">11:00 AM - 06:00 PM</span>
+                    <span className="text-gray-400 uppercase tracking-widest text-xs">Saturday</span>
+                    <span className="text-primary">CLOSED</span>
                   </div>
                 </div>
               </div>
@@ -405,7 +405,7 @@ const AboutPage = () => {
               <button className="px-12 py-5 bg-primary text-white font-black rounded-full shadow-2xl hover:scale-105 transition-transform">Book Consultation</button>
               <button className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10">Download Catalog</button>
             </div>
-            <p className="text-primary font-bold tracking-[0.3em]">+91 98XXX XXXXX</p>
+            <p className="text-primary font-bold tracking-[0.3em]">+91 7275401715</p>
           </div>
         </motion.div>
       </section>

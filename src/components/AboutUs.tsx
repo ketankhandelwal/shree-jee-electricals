@@ -64,7 +64,7 @@ const AboutUs = () => {
             </div>
 
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light">
-              Since 1995, <span className="text-primary font-semibold">Shree Jee Electricals</span> has been more than just a store. We are a destination for those who seek to harmonize technology with aesthetic beauty. 
+              Since 2014, <span className="text-primary font-semibold">Shree Jee Electricals</span> has been more than just a store. We are a destination for those who seek to harmonize technology with aesthetic beauty. 
             </p>
 
             {/* Feature Cards */}

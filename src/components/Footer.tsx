@@ -12,23 +12,30 @@ const aboutLinks = [
 ];
 
 const Footer = () => {
+  const mapUrl = "https://www.google.com/maps/dir//Schneider+electric+-+Shree+Jee+Electricals,+Infront+of+Janta+Tent+House,+Bhagwa+Chungi,+Dali+pur,+Bela+Pratapgarh,+Uttar+Pradesh+230001/@25.9142951,81.993651,19.81z/data=!4m8!4m7!1m0!1m5!1m1!1s0x399a913c1ef00ee9:0x6f48104f7a110604!2m2!1d81.9938561!2d25.9159735?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D";
+
   return (
     <footer className="bg-[#0a0a0a] text-white">
       {/* 1. High-Level Quick Contact Bar */}
       <div className="border-b border-white/10 py-12">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
           <div className="flex flex-wrap justify-between items-center gap-8">
-            <a href="#" className="flex items-center gap-4 group">
+            <a 
+              href={mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 group"
+            >
               <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Visit Us</p>
-                <span className="text-sm font-bold">Store Locator</span>
+                <span className="text-sm font-bold">Balipur,Pratapgarh, Uttar Pradesh, India</span>
               </div>
             </a>
 
-            <a href="#" className="flex items-center gap-4 group">
+            <a href="tel:+917275401715" className="flex items-center gap-4 group">
               <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Phone className="w-6 h-6" />
               </div>
@@ -38,13 +45,13 @@ const Footer = () => {
               </div>
             </a>
 
-            <a href="#" className="flex items-center gap-4 group">
+            <a href="mailto:Shreejeelightguru@gmail.com" className="flex items-center gap-4 group">
               <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Mail className="w-6 h-6" />
               </div>
               <div>
                 <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Email</p>
-                <span className="text-sm font-bold">support@shreejee.com</span>
+                <span className="text-sm font-bold">Shreejeelightguru@gmail.com</span>
               </div>
             </a>
 
@@ -132,7 +139,7 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-gray-500 font-medium">
-              © 2010-2026 Shree Jee Electrical. All rights reserved.
+              © 2014-2026 Shree Jee Electrical. All rights reserved.
             </p>
             <div className="flex gap-6">
                 <span className="text-[10px] text-gray-600 font-bold uppercase">Designed for Excellence</span>
