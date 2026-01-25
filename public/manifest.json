@@ -1,0 +1,16 @@
+{
+    "name": "Shree Jee Electricals",
+    "short_name": "Shree Jee",
+    "description": "Best Electrical & Lighting Shop in Pratapgarh, UP",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#b45309",
+    "icons": [
+        {
+            "src": "/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
