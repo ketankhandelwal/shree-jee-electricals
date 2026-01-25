@@ -77,11 +77,22 @@ const ContactUs = () => {
             <div className="pt-6 space-y-4">
               <p className="text-sm font-bold uppercase tracking-widest text-gray-400">Follow Our Journey</p>
               <div className="flex gap-4">
-                {[Facebook, Instagram, Twitter].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all">
-                    <Icon className="w-5 h-5" />
-                  </a>
-                ))}
+                <a 
+                  href="https://www.facebook.com/shree.jee.light.guru" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/shree_jee07/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>

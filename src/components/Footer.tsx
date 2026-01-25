@@ -83,11 +83,22 @@ const Footer = () => {
                 Illuminating spaces with elegance since 2010. We provide premium, energy-efficient lighting solutions tailored for modern Indian homes and commercial spaces.
               </p>
               <div className="flex gap-4">
-                {[Facebook, Instagram, Twitter].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
+                <a 
+                  href="https://www.facebook.com/shree.jee.light.guru" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/shree_jee07/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
               </div>
             </div>
 
@@ -141,8 +152,18 @@ const Footer = () => {
             <p className="text-xs text-gray-500 font-medium">
               © 2014-2026 Shree Jee Electrical. All rights reserved.
             </p>
-            <div className="flex gap-6">
-                <span className="text-[10px] text-gray-600 font-bold uppercase">Designed for Excellence</span>
+            <div className="flex gap-6 items-center">
+                <div className="flex flex-col items-center md:items-end">
+                  <span className="text-[10px] text-gray-600 font-bold uppercase">Designed for Excellence</span>
+                  <a 
+                    href="https://www.instagram.com/ketan.khandelwal.1/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[9px] text-primary font-black uppercase tracking-[0.2em] mt-1 hover:text-white transition-colors"
+                  >
+                    Ketan Khandelwal
+                  </a>
+                </div>
                 <span className="text-[10px] text-gray-600 font-bold uppercase">Made in India</span>
             </div>
           </div>

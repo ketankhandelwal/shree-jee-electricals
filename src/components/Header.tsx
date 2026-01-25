@@ -24,11 +24,23 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Autofocus search input when opened
+  // Fix 1: Handle Escape key and Autofocus
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsSearchOpen(false);
+        setSearchQuery("");
+      }
+    };
+
     if (isSearchOpen) {
+      window.addEventListener("keydown", handleKeyDown);
       setTimeout(() => searchInputRef.current?.focus(), 100);
+      document.body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      document.body.style.overflow = "unset";
     }
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isSearchOpen]);
 
   // Search Logic
@@ -145,11 +157,14 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white/95 backdrop-blur-2xl z-[120] flex flex-col pt-10"
+            className="fixed inset-0 bg-white z-[120] flex flex-col pt-10 overflow-y-auto"
           >
             <div className="max-w-4xl mx-auto w-full px-6">
               <div className="flex justify-between items-center mb-12">
-                <img src={logo} alt="SHREE JEE" className="h-12" />
+                {/* Fix 2: Logo takes you home and closes search */}
+                <Link to="/" onClick={() => setIsSearchOpen(false)}>
+                  <img src={logo} alt="SHREE JEE" className="h-12 brightness-0" />
+                </Link>
                 <Button 
                   variant="ghost" 
                   size="icon" 
@@ -165,7 +180,7 @@ const Header = () => {
                 <input 
                   ref={searchInputRef}
                   type="text" 
-                  placeholder="Master search: Chandeliers, Philips, Smart LED..."
+                  placeholder="Search products..."
                   className="w-full bg-transparent border-b-2 border-gray-100 py-6 pl-14 pr-10 text-3xl md:text-5xl font-black text-gray-900 placeholder:text-gray-200 focus:outline-none focus:border-primary transition-all"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -181,7 +196,7 @@ const Header = () => {
               </div>
 
               {/* Recommendations */}
-              <div className="mt-12">
+              <div className="mt-12 pb-20">
                 {searchQuery.length > 1 ? (
                   <div className="space-y-4">
                     <div className="flex items-center justify-between px-2 mb-6">
@@ -195,10 +210,10 @@ const Header = () => {
                           <button
                             key={product.id}
                             onClick={() => handleProductSelect(product.id)}
-                            className="w-full flex items-center gap-6 p-4 rounded-[24px] hover:bg-primary/5 border border-transparent hover:border-primary/10 transition-all group/item text-left"
+                            className="w-full flex items-center gap-6 p-4 rounded-[24px] bg-white border border-gray-100 hover:border-primary/30 hover:shadow-lg transition-all group/item text-left"
                           >
-                            <div className="w-20 h-20 rounded-2xl bg-white border border-gray-100 p-2 flex-shrink-0">
-                               <img src={product.image} className="w-full h-full object-contain group-hover/item:scale-110 transition-transform" alt={product.name} />
+                            <div className="w-20 h-20 rounded-2xl bg-gray-50 border border-gray-100 p-2 flex-shrink-0">
+                               <img src={product.image} className="w-full h-full object-contain group-hover/item:scale-110 transition-transform duration-300" alt={product.name} />
                             </div>
                             <div className="flex-grow">
                                <div className="flex items-center gap-2 mb-1">
@@ -209,7 +224,7 @@ const Header = () => {
                                   </div>
                                </div>
                                <h3 className="text-xl font-bold text-gray-900 group-hover/item:text-primary transition-colors">{product.name}</h3>
-                               <p className="text-sm font-black text-gray-400">Rs. {product.price.toLocaleString("en-IN")}</p>
+                               <p className="text-sm font-black text-gray-500">Rs. {product.price.toLocaleString("en-IN")}</p>
                             </div>
                             <ChevronRight className="w-6 h-6 text-gray-200 group-hover/item:text-primary group-hover/item:translate-x-2 transition-all" />
                           </button>
@@ -218,8 +233,7 @@ const Header = () => {
                     ) : (
                       <div className="py-24 text-center border-2 border-dashed border-gray-100 rounded-[40px]">
                          <Sparkles className="w-12 h-12 text-gray-100 mx-auto mb-4" />
-                         <p className="text-gray-400 font-medium">We couldn't find a direct match.</p>
-                         <p className="text-xs text-gray-300 mt-1 uppercase tracking-widest font-black">Try searching "Lighting" or "Gold"</p>
+                         <p className="text-gray-400 font-medium">No results found.</p>
                       </div>
                     )}
                   </div>
@@ -239,14 +253,23 @@ const Header = () => {
                            ))}
                         </div>
                      </div>
-                     <div className="space-y-6">
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Quick Contact</span>
-                        <div className="p-6 bg-gray-900 rounded-[32px] text-white">
-                           <p className="text-sm text-gray-400 font-light mb-4">Can't find what you're looking for?</p>
-                           <p className="text-xl font-black text-primary mb-2">+91 98XXX XXXXX</p>
-                           <button className="text-[10px] font-black uppercase tracking-widest border-b border-primary text-primary">Chat on WhatsApp</button>
-                        </div>
-                     </div>
+                    <div className="space-y-6">
+                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Quick Contact</span>
+                      <div className="p-6 bg-gray-900 rounded-[32px] text-white">
+                        <p className="text-sm text-gray-400 font-light mb-4">Can't find what you're looking for?</p>
+                        <a href="tel:+917275401715" className="block text-xl font-black text-primary mb-2 hover:underline">
+                          +91 7275401715
+                        </a>
+                        <a 
+                          href="https://wa.me/917275401715" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] font-black uppercase tracking-widest border-b border-primary text-primary hover:text-white hover:border-white transition-colors inline-block"
+                        >
+                          Chat on WhatsApp
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -259,7 +282,7 @@ const Header = () => {
       <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="p-6">
           <div className="flex justify-between items-center mb-10">
-            <img src={logo} alt="SHREE JEE" className="h-10" />
+            <img src={logo} alt="SHREE JEE" className="h-10 brightness-0" />
             <Button variant="ghost" onClick={() => setIsMenuOpen(false)}>
               <X className="h-8 w-8 text-gray-900" />
             </Button>
