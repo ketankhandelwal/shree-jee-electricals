@@ -55,7 +55,7 @@ const Footer = () => {
               </div>
             </a>
 
-            <a href="#" className="flex items-center gap-4 group">
+            <a href="/catalogs" className="flex items-center gap-4 group">
               <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Download className="w-6 h-6" />
               </div>
