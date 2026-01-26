@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -402,8 +403,8 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-7xl font-black text-white leading-tight">Ready to transform <br /> your space?</h2>
             <p className="text-gray-400 text-xl font-light max-w-2xl mx-auto">Schedule a private session with our lighting architects and bring your vision to light.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="px-12 py-5 bg-primary text-white font-black rounded-full shadow-2xl hover:scale-105 transition-transform">Book Consultation</button>
-              <button className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10">Download Catalog</button>
+              <Link to="/contact" className="px-12 py-5 bg-primary text-white font-black rounded-full shadow-2xl hover:scale-105 transition-transform text-center flex items-center justify-center">Book Consultation</Link>
+              <Link to="/catalogs" className="px-12 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10 text-center flex items-center justify-center">Download Catalog</Link>
             </div>
             <p className="text-primary font-bold tracking-[0.3em]">+91 7275401715</p>
           </div>

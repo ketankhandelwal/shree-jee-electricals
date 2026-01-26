@@ -110,16 +110,16 @@ const Header = () => {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className={`text-sm font-bold uppercase tracking-wide transition-colors relative group ${
                     scrolled ? "text-gray-700 hover:text-primary" : "text-white/90 hover:text-white"
                   }`}
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -289,9 +289,9 @@ const Header = () => {
           </div>
           <nav className="flex flex-col gap-6">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="text-2xl font-bold text-gray-800" onClick={() => setIsMenuOpen(false)}>
+              <Link key={item.name} to={item.href} className="text-2xl font-bold text-gray-800" onClick={() => setIsMenuOpen(false)}>
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

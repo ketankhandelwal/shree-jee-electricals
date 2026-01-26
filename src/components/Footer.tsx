@@ -1,4 +1,5 @@
 import { MapPin, Phone, Download, Facebook, Instagram, Twitter, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const productCategories = [
   "Chandeliers", "Ceiling Lights", "Smart Lights", "Table Lamps",
@@ -55,7 +56,7 @@ const Footer = () => {
               </div>
             </a>
 
-            <a href="/catalogs" className="flex items-center gap-4 group">
+            <Link to="/catalogs" className="flex items-center gap-4 group">
               <div className="p-3 rounded-full bg-white/5 group-hover:bg-primary transition-colors">
                 <Download className="w-6 h-6" />
               </div>
@@ -63,7 +64,7 @@ const Footer = () => {
                 <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">Resources</p>
                 <span className="text-sm font-bold">Download Catalog</span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -133,9 +134,9 @@ const Footer = () => {
                   if (link === "About Us") href = "/about";
                   if (link === "Contact Us") href = "/contact";
                   return (
-                    <a key={link} href={href} className="block text-gray-400 hover:text-primary transition-colors text-sm">
+                    <Link key={link} to={href} className="block text-gray-400 hover:text-primary transition-colors text-sm">
                       {link}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
