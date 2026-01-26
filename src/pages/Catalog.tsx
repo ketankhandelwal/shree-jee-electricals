@@ -8,42 +8,42 @@ import { Button } from "@/components/ui/button";
 const partners = [
   { 
     name: "Philips", 
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJONtOn28ythjTMSYpYDFUSeZFDMndtfVI0g&s",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Philips_logo.svg/1280px-Philips_logo.svg.png",
     description: "World leader in lighting, providing energy-efficient solutions.",
     catalogUrl: "#",
     color: "from-amber-200/40 to-amber-100/40"
   },
   { 
     name: "Havells", 
-    logo: "https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran-thumbnail.png",
+    logo: "https://companieslogo.com/img/orig/HAVELLS.NS_BIG-50b8b1af.png?t=1745677675",
     description: "Leading Fast Moving Electrical Goods (FMEG) Company.",
     catalogUrl: "#",
     color: "from-yellow-200/40 to-amber-100/40"
   },
   { 
     name: "Schneider", 
-    logo: "https://toppng.com/uploads/preview/schneider-electric-vector-logo-free-115741777134iko2tipgl.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Schneider-Electric-Logo.jpg",
     description: "Digital transformation of energy management and automation.",
     catalogUrl: "#",
     color: "from-amber-100/40 to-yellow-50/40"
   },
   { 
     name: "RR Signature", 
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHJaQ0AXehp9lkKSQSNo95Dq6kT08tlvG3QQ&s",
+    logo: "https://mma.prnewswire.com/media/530944/RR_Kabel_Logo.jpg?p=twitter",
     description: "Premier choice for architectural and decorative lighting.",
     catalogUrl: "#",
     color: "from-amber-200/40 to-primary/20"
   },
   { 
     name: "Luminous", 
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxyAXo2dPpQ5Q6YRYKlTGpHrXRLydZqHE1g&s",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zrilFWWwdct-Swtei2WDtOgKImxB7pD7lA&s",
     description: "Powerful inverter and battery solutions for your home.",
     catalogUrl: "#",
     color: "from-yellow-200/40 to-amber-100/40"
   },
   { 
     name: "Havells Standard", 
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLLqvauaENUpDkcj8f5yG6UKRclCtBXMEcvA&s",
+    logo: "https://havells.com/media/wysiwyg/Standard.jpg",
     description: "Trusted standards in switchgear and electrical products.",
     catalogUrl: "#",
     color: "from-amber-200/40 to-primary/20"

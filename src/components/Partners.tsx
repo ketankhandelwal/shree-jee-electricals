@@ -1,12 +1,12 @@
 import React from "react";
 
 const partners = [
-  { name: "Philips", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJONtOn28ythjTMSYpYDFUSeZFDMndtfVI0g&s" },
-  { name: "Havells", logo: "https://e7.pngegg.com/pngimages/680/167/png-clipart-havells-logo-havell-s-electrical-shop-havells-logo-company-krrish-text-carnivoran-thumbnail.png" },
-  { name: "Schneider", logo: "https://toppng.com/uploads/preview/schneider-electric-vector-logo-free-115741777134iko2tipgl.png" },
-  { name: "RR signature", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHJaQ0AXehp9lkKSQSNo95Dq6kT08tlvG3QQ&s" },
-  { name: "Luminous", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmxyAXo2dPpQ5Q6YRYKlTGpHrXRLydZqHE1g&s" },
-  { name: "Havells standard", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLLqvauaENUpDkcj8f5yG6UKRclCtBXMEcvA&s" },
+  { name: "Philips",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Philips_logo.svg/1280px-Philips_logo.svg.png"},
+  { name: "Havells",    logo: "https://companieslogo.com/img/orig/HAVELLS.NS_BIG-50b8b1af.png?t=1745677675"},
+  { name: "Schneider", logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Schneider-Electric-Logo.jpg" },
+  { name: "RR signature", logo: "https://mma.prnewswire.com/media/530944/RR_Kabel_Logo.jpg?p=twitter" },
+  { name: "Luminous", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zrilFWWwdct-Swtei2WDtOgKImxB7pD7lA&s" },
+  { name: "Havells standard", logo: "https://havells.com/media/wysiwyg/Standard.jpg "},
   { name: "Polycab wire", logo: "https://static.wixstatic.com/media/78663d_378a8a4925084c029cc420095ed30c3f~mv2.jpg/v1/fill/w_1000,h_398,al_c,q_90/file.jpg" },
   { name: "L&t switch gear", logo: "https://5.imimg.com/data5/SELLER/Default/2024/4/410342854/DX/VK/HZ/14408247/download.png" },
 ];
