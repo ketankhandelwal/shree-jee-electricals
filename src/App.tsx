@@ -10,6 +10,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import Catalog from "./pages/Catalog";
+import StoryPage from "./pages/StoryPage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/catalogs" element={<Catalog />} />
+            <Route path="/story" element={<StoryPage />} />
             
             {/* 404 - Must be last */}
             <Route path="*" element={<NotFound />} />

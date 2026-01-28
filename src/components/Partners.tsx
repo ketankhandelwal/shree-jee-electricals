@@ -9,6 +9,7 @@ const partners = [
   { name: "Havells standard", logo: "https://havells.com/media/wysiwyg/Standard.jpg "},
   { name: "Polycab wire", logo: "https://static.wixstatic.com/media/78663d_378a8a4925084c029cc420095ed30c3f~mv2.jpg/v1/fill/w_1000,h_398,al_c,q_90/file.jpg" },
   { name: "L&t switch gear", logo: "https://5.imimg.com/data5/SELLER/Default/2024/4/410342854/DX/VK/HZ/14408247/download.png" },
+  {name :"Panova", logo :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI3gCHXYbI6lUbT0BoOfWbN6n965ySjx-xHQ&s"}
 ];
 
 const Partners = () => {

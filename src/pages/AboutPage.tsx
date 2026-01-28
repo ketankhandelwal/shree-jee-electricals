@@ -173,6 +173,8 @@ const AboutPage = () => {
         </motion.div>
       </section>
 
+
+
       {/* Features Grid */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-5">

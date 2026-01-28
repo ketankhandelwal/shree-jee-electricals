@@ -62,6 +62,13 @@ const partners = [
     catalogUrl: "#",
     color: "from-amber-200/40 to-amber-100/40"
   },
+  {
+    name:"Panova",
+    logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI3gCHXYbI6lUbT0BoOfWbN6n965ySjx-xHQ&s",
+    description:"",
+    catalogUrl:"#",
+    color:"from-amber-200/40 to-amber-100/40"
+  }
 ];
 
 const Catalog = () => {
