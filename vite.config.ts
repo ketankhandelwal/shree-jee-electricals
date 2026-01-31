@@ -3,20 +3,21 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/',  // Root path for Hostinger
+  // Use a conditional base if needed, but '/' is usually fine
+  base: "/", 
   server: {
-    host: "::",
+host: true,
     port: 8080,
-    headers: {
-      'Content-Type': 'application/javascript',
-    },
+    strictPort: true,
+    // This ensures the browser doesn't try to "guess" the content type incorrectly
+    fs: {
+      strict: false 
+    }
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -26,28 +27,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        format: 'es',
-        assetFileNames: (assetInfo) => {
-          const name = assetInfo.name;
-          if (!name) return 'assets/[name]-[hash][extname]';
-          
-          if (name.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
-            return 'assets/images/[name]-[hash][extname]';
-          }
-          if (name.match(/\.(mp4|webm|ogg)$/)) {
-            return 'assets/videos/[name]-[hash][extname]';
-          }
-          if (name.match(/\.(css)$/)) {
-            return 'assets/css/[name]-[hash][extname]';
-          }
-          return 'assets/[name]-[hash][extname]';
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-      },
-    },
+    // It's safer to keep standard naming during troubleshooting
+    // You can re-enable your custom rollupOptions once the dev server works
   },
 }));

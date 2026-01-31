@@ -58,105 +58,111 @@ const Story = () => {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-32 bg-gray-900 overflow-hidden relative">
-      {/* Background Glows */}
+    <section ref={containerRef} className="py-20 md:py-40 bg-black overflow-hidden relative">
+      {/* Background Cinematic Glows */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[20%] w-72 h-72 bg-yellow-500/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] animate-pulse-slow" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="container mx-auto px-5 relative z-10">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-24 max-w-3xl mx-auto"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-center mb-32 max-w-4xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-6">
-            <span className="text-yellow-500 font-bold uppercase tracking-[0.2em] text-xs">Our Journey</span>
+          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-secondary/10 border border-secondary/20 backdrop-blur-md mb-8">
+            <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            <span className="text-secondary font-black uppercase tracking-[0.4em] text-[10px]">Legacy in Motion</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-            Decades of <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">Illuminating Dreams</span>
+          <h2 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[0.9] tracking-tighter">
+            Our Journey of <br/>
+            <span className="italic font-light text-secondary">Light & Excellence</span>
           </h2>
-          <p className="text-gray-400 text-lg font-light leading-relaxed">
-            From a single storefront to a legacy of light. Walk through the milestones that defined our path to excellence.
+          <div className="w-24 h-1.5 bg-secondary mx-auto mb-10 shadow-[0_0_20px_rgba(251,191,36,0.4)]" />
+          <p className="text-white/60 text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+            From our founding vision to a nationwide reach—explore the key milestones that have shaped Shree Jee Electricals into the gold standard of illumination.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Central Progress Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2 md:translate-x-0">
+          {/* Central Progress Line - More Pronounced */}
+          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[1px] bg-white/5 -translate-x-1/2 md:translate-x-0">
              <motion.div 
                 style={{ scaleY, transformOrigin: "top" }}
-                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-yellow-600 via-yellow-400 to-amber-500 shadow-[0_0_15px_rgba(251,191,36,0.5)]"
+                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-secondary to-transparent shadow-[0_0_20px_rgba(251,191,36,0.5)]"
              />
           </div>
 
-          <div className="space-y-12 md:space-y-32">
+          <div className="space-y-24 md:space-y-48">
             {stories.map((story, index) => {
               const isEven = index % 2 === 0;
               return (
-                <div key={index} className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-0`}>
+                <div key={index} className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center gap-12 md:gap-0`}>
                   
-                  {/* Icon Bubble */}
-                  <div className="absolute left-[20px] md:left-1/2 top-0 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-gray-900 bg-yellow-500 shadow-lg shadow-yellow-500/20 z-20 md:h-14 md:w-14">
-                    <story.icon className="text-gray-900 w-4 h-4 md:w-6 md:h-6" strokeWidth={2.5} />
+                  {/* Icon Bubble - More Premium */}
+                  <div className="absolute left-[20px] md:left-1/2 top-0 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black backdrop-blur-xl shadow-2xl z-20 group">
+                    <div className="absolute inset-0 rounded-full bg-secondary/20 blur-md group-hover:bg-secondary/40 transition-colors" />
+                    <story.icon className="text-secondary w-5 h-5 relative z-10" strokeWidth={1.5} />
                   </div>
 
                   {/* Content Side */}
-                   <div className="w-full md:w-[50%] pl-16 md:pl-0 md:px-12">
+                   <div className="w-full md:w-[50%] pl-16 md:pl-0 md:px-16">
                     <motion.div 
-                      initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                      initial={{ opacity: 0, x: isEven ? 60 : -60 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
-                      transition={{ duration: 0.6 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
                       className={`text-left ${isEven ? 'md:text-left' : 'md:text-right'}`}
                     >
-                      <span className="text-6xl md:text-8xl font-black text-white/5 absolute -top-10 md:-top-16 select-none leading-none z-0 mix-blend-overlay">
+                      <span className="text-8xl md:text-[12rem] font-black text-white/[0.03] absolute -top-12 md:-top-24 select-none leading-none z-0 tracking-tighter w-full left-0">
                         {story.year}
                       </span>
                       <div className="relative z-10">
-                        <span className="text-yellow-500 font-bold tracking-widest text-sm uppercase mb-2 block">{story.year}</span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{story.title}</h3>
-                        <p className="text-gray-400 leading-relaxed max-w-md ml-0 md:ml-auto md:mr-0 inline-block">
+                        <span className="text-secondary font-black tracking-[0.3em] text-xs uppercase mb-4 block">{story.year}</span>
+                        <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight leading-tight">{story.title}</h3>
+                        <p className="text-white/40 text-lg font-medium leading-relaxed max-w-md ml-0 md:ml-auto md:mr-0 inline-block border-l-2 md:border-l-0 md:border-r-2 border-secondary/30 pl-6 md:pl-0 md:pr-6">
                            {story.description}
                         </p>
                       </div>
                     </motion.div>
                   </div>
 
-                  {/* Image Side - The "Illuminating" Part */}
-                  <div className="w-full md:w-[50%] pl-16 md:pl-0 md:px-12">
+                  {/* Image Side */}
+                  <div className="w-full md:w-[50%] pl-16 md:pl-0 md:px-16">
                      <motion.div
                        initial={{ 
                          opacity: 0, 
-                         scale: 0.9, 
-                         filter: "grayscale(100%) brightness(0.5)",
-                         boxShadow: "0 0 0px rgba(251, 191, 36, 0)"
+                         scale: 0.95,
+                         y: 20
                        }}
                        whileInView={{ 
                          opacity: 1, 
-                         scale: 1, 
-                         filter: "grayscale(0%) brightness(1)",
-                         boxShadow: "0 20px 50px rgba(0, 0, 0, 0.5)"
+                         scale: 1,
+                         y: 0
                        }}
-                       viewport={{ once: false, amount: 0.4 }}
-                       transition={{ duration: 0.8, ease: "easeOut" }}
-                       className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
+                       viewport={{ once: true, amount: 0.2 }}
+                       transition={{ duration: 1, ease: "circOut" }}
+                       className="relative group rounded-[2rem] overflow-hidden border border-white/5 bg-white/[0.02] backdrop-blur-3xl p-2"
                      >
-                        {/* Hover Overlay Glow */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                        
-                        <motion.img 
-                          src={story.image} 
-                          alt={story.title} 
-                          className="w-full aspect-video md:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+                        <div className="relative overflow-hidden rounded-[1.6rem]">
+                          <motion.img 
+                            src={story.image} 
+                            alt={story.title} 
+                            className="w-full aspect-video md:aspect-[4/3] object-cover transition-transform duration-[2s] group-hover:scale-110 brightness-[0.8] group-hover:brightness-100"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                          
+                          {/* Floating Year Badge on Image for Mobile */}
+                          <div className="absolute top-4 right-4 md:hidden bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                            {story.year}
+                          </div>
+                        </div>
 
-                        {/* Glossy Reflection Effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-tr from-transparent via-white/5 to-transparent z-20 pointer-events-none" />
+                        {/* Edge Glow */}
+                        <div className="absolute inset-0 border border-secondary/0 group-hover:border-secondary/20 transition-colors duration-700 rounded-[2rem] pointer-events-none" />
                      </motion.div>
                   </div>
 
@@ -165,6 +171,21 @@ const Story = () => {
             })}
           </div>
         </div>
+        
+        {/* Call to Action or Ending Milestone */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-48 text-center"
+        >
+          <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-secondary to-transparent w-full max-w-lg mb-12" />
+          <h4 className="text-2xl md:text-3xl font-bold text-white mb-4">And the story continues...</h4>
+          <p className="text-white/40 mb-12">Building a future where every corner of India shines bright.</p>
+          <button className="px-12 py-4 bg-secondary text-white font-black uppercase tracking-widest text-xs rounded-full hover:bg-secondary/90 transition-all hover:scale-105 shadow-[0_0_30px_rgba(251,191,36,0.3)]">
+            Partner with us
+          </button>
+        </motion.div>
       </div>
     </section>
   );

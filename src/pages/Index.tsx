@@ -15,6 +15,7 @@ import BestSellers from "@/components/BestSellers";
 import WallLights from "@/components/WallLights";
 import Inspirations from "@/components/Inspirations";
 import Partners from "@/components/Partners";
+import LandingStory from "@/components/LandingStory";
 import IntroSplash from "@/components/IntroSplash";
 import { useState, useEffect } from "react";
 
@@ -47,6 +48,7 @@ const Index = () => {
         <RightLightRightRoom />
         <Inspirations />
         <Partners />
+        <LandingStory />
         <Testimonials />
         <TrustBadges />
         <Newsletter />
