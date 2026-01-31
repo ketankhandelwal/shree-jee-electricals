@@ -12,6 +12,8 @@ import Contact from "./pages/Contact";
 import Catalog from "./pages/Catalog";
 import StoryPage from "./pages/StoryPage";
 
+import ScrollToHash from "./components/ScrollToHash";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter basename="/">
+          <ScrollToHash />
           <Routes>
             {/* Home Page */}
             <Route path="/" element={<Index />} />
