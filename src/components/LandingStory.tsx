@@ -51,116 +51,133 @@ const LandingStory = () => {
   return (
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          
-          {/* Left Side: Content & Years */}
-          <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[2px] bg-primary" />
-                <span className="text-primary font-bold uppercase tracking-widest text-sm">Our Legacy</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                Crafting Light <br />
-                <span className="text-primary italic">Since 2014</span>
-              </h2>
-              <p className="text-gray-500 text-lg">
-                Explore the milestones that define our commitment to illuminating your world with elegance and innovation.
-              </p>
-            </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 max-w-3xl mx-auto"
+        >
+          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="w-12 h-[2px] bg-primary" />
+            <span className="text-primary font-bold uppercase tracking-widest text-sm">Our Legacy</span>
+            <div className="w-12 h-[2px] bg-primary" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            Crafting Light Since <span className="text-primary italic">2014</span>
+          </h2>
+          <p className="text-gray-500 text-lg">
+            A decade of innovation, architectural brilliance, and transformative lighting solutions.
+          </p>
+        </motion.div>
 
-            {/* Year Navigation */}
-            <div className="space-y-4">
-              {milestones.map((ms, index) => (
+        <div className="max-w-5xl mx-auto space-y-6">
+          {milestones.map((ms, index) => {
+            const isActive = activeTab === index;
+            const Icon = ms.icon;
+            
+            return (
+              <div 
+                key={ms.year}
+                className={`group relative rounded-[2.5rem] transition-all duration-700 overflow-hidden ${
+                  isActive 
+                  ? "bg-gray-50 border border-primary/10 shadow-2xl shadow-primary/5" 
+                  : "bg-white border border-gray-100 hover:border-primary/20"
+                }`}
+              >
+                {/* Header/Trigger */}
                 <button
-                  key={ms.year}
-                  onClick={() => setActiveTab(index)}
-                  className={`w-full flex items-center gap-6 p-4 rounded-2xl transition-all duration-500 group ${
-                    activeTab === index 
-                    ? "bg-gray-50 shadow-sm shadow-primary/10 border border-primary/10" 
-                    : "hover:bg-gray-50/50"
-                  }`}
+                  onClick={() => setActiveTab(isActive ? -1 : index)}
+                  className="w-full flex items-center justify-between p-6 md:p-10 text-left z-20 relative"
                 >
-                  <span className={`text-2xl font-black italic transition-colors ${
-                    activeTab === index ? "text-primary scale-110" : "text-gray-200 group-hover:text-gray-300"
-                  }`}>
-                    {ms.year}
-                  </span>
-                  <div className="flex-1 text-left">
-                    <h3 className={`font-bold transition-colors ${
-                      activeTab === index ? "text-gray-900" : "text-gray-400 group-hover:text-gray-600"
+                  <div className="flex items-center gap-6 md:gap-12">
+                    <span className={`text-3xl md:text-5xl font-black italic tracking-tighter transition-all duration-500 ${
+                      isActive ? "text-primary scale-110" : "text-gray-200 group-hover:text-primary/30"
+                    }`}>
+                      {ms.year}
+                    </span>
+                    <h3 className={`text-xl md:text-3xl font-bold transition-all duration-500 ${
+                      isActive ? "text-gray-900" : "text-gray-400 group-hover:text-gray-600"
                     }`}>
                       {ms.title}
                     </h3>
                   </div>
-                  {activeTab === index && (
-                    <motion.div layoutId="arrow" transition={{ type: "spring", stiffness: 300, damping: 30 }}>
-                      <ArrowRight className="w-5 h-5 text-primary" />
+                  
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    isActive ? "bg-primary rotate-90" : "bg-gray-100 group-hover:bg-primary/10"
+                  }`}>
+                    <ArrowRight className={`w-6 h-6 transition-colors ${
+                      isActive ? "text-white" : "text-gray-400 group-hover:text-primary"
+                    }`} />
+                  </div>
+                </button>
+
+                {/* Unfolding Content */}
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 md:px-10 md:pb-12 pt-0">
+                        <div className="space-y-10">
+                          {/* Cinematic Large Image */}
+                          <motion.div 
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.8 }}
+                            className="relative aspect-[4/3] md:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl group/img"
+                          >
+                            <img 
+                              src={ms.image} 
+                              alt={ms.title}
+                              className="w-full h-full object-cover transition-transform duration-[2s] group-hover/img:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                            
+                            {/* Icon Badge on Image */}
+                            <div className="absolute top-8 right-8">
+                              <div className={`p-5 rounded-3xl bg-gradient-to-br ${ms.color} shadow-2xl shadow-black/40 backdrop-blur-xl border border-white/20`}>
+                                <Icon className="w-8 h-8 text-white" />
+                              </div>
+                            </div>
+
+                            {/* Year Watermark on Image */}
+                            <div className="absolute bottom-8 right-10 select-none">
+                              <span className="text-white/20 text-6xl md:text-9xl font-black italic tracking-tighter">
+                                {ms.year}
+                              </span>
+                            </div>
+                          </motion.div>
+
+                          {/* Refined Description Stacked Below */}
+                          <div className="max-w-4xl">
+                            <motion.div
+                              initial={{ y: 20, opacity: 0 }}
+                              animate={{ y: 0, opacity: 1 }}
+                              transition={{ delay: 0.4 }}
+                              className="flex flex-col md:flex-row md:items-center gap-8 md:gap-16"
+                            >
+                              <p className="flex-1 text-gray-600 text-xl md:text-2xl font-medium leading-relaxed italic border-l-4 border-primary/30 pl-8">
+                                "{ms.description}"
+                              </p>
+                              <div className="flex-shrink-0">
+                                <button className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                  View Project
+                                </button>
+                              </div>
+                            </motion.div>
+                          </div>
+                        </div>
+                      </div>
                     </motion.div>
                   )}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side: Interactive Display */}
-          <div className="w-full lg:w-1/2 relative">
-            <div className="relative aspect-[4/5] md:aspect-square group">
-              {/* Main Image Base */}
-              <div className="absolute inset-0 bg-gray-100 rounded-[3rem] -rotate-3 transition-transform group-hover:rotate-0 duration-700" />
-              <div className="absolute inset-0 bg-primary/5 rounded-[3rem] rotate-3 transition-transform group-hover:rotate-0 duration-700 delay-100" />
-              
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 1.05, y: -20 }}
-                  transition={{ duration: 0.5, ease: "circOut" }}
-                  className="relative h-full w-full rounded-[3rem] overflow-hidden shadow-2xl z-10"
-                >
-                  <img
-                    src={milestones[activeTab].image}
-                    alt={milestones[activeTab].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  
-                  {/* Floating Content on Image */}
-                  <div className="absolute bottom-10 left-10 right-10">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                      className="flex items-start gap-4"
-                    >
-                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${milestones[activeTab].color} shadow-lg shadow-black/20`}>
-                        {(() => {
-                          const Icon = milestones[activeTab].icon;
-                          return <Icon className="w-6 h-6 text-white" />;
-                        })()}
-                      </div>
-                      <div>
-                        <h4 className="text-2xl font-black text-white mb-2">{milestones[activeTab].title}</h4>
-                        <p className="text-white/70 text-sm leading-relaxed max-w-xs uppercase tracking-tighter">
-                          {milestones[activeTab].description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Decorative Element */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl z-0" />
-            </div>
-          </div>
-
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
