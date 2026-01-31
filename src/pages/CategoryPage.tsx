@@ -16,6 +16,7 @@ import catProduct7 from "@/assets/cat-product-7.jpg";
 const categoryData: Record<string, { 
   title: string; 
   description: string; 
+  heroImage: string;
   subCategories: string[];
   products: Array<{
     id: number;
@@ -29,7 +30,8 @@ const categoryData: Record<string, {
 }> = {
   "ceiling-lights": {
     title: "Ceiling Lights",
-    description: "Explore Shree Jee Electrical Ceiling Lights, featuring a wide range of LED downlights, spotlights, surface lights, and COB lights. Designed for style, energy efficiency, and lasting performance, our ceiling lights will transform your space with reliable, high-quality illumination. Find the perfect fit for your home today!",
+    description: "Seamlessly integrate brilliance into your architecture with our professional-grade ceiling solutions. From ultra-slim LED panels that vanish into your decor to high-precision COB downlights that create dramatic focus, our collection is engineered for those who demand both efficiency and aesthetic perfection in every room.",
+    heroImage: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=1974&auto=format&fit=crop",
     subCategories: ["Surface Lights", "Downlights", "COB Light", "Cabinet Light"],
     products: [
       { id: 1, name: "Classic Round Ceiling Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/ceiling_lights/ceiling1.jpg", price: 899, originalPrice: 1499, discount: 40, rating: 4.5 },
@@ -45,7 +47,8 @@ const categoryData: Record<string, {
   },
   "chandeliers": {
     title: "Chandeliers",
-    description: "Discover our exquisite collection of chandeliers at Shree Jee Electrical. From classic crystal designs to modern minimalist styles, our chandeliers add elegance and sophistication to any room. Perfect for living rooms, dining areas, and grand entrances.",
+    description: "Transform your grand spaces into a gallery of light. Our curated collection of chandeliers ranges from timeless crystal masterpieces that refract rainbow hues across your walls to bold, avant-garde silhouettes for the modern connoisseur. These aren't just lights—they are the soul of your home's most prestigious rooms.",
+    heroImage: "https://images.unsplash.com/photo-1584537330618-5aa40b45e43d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxyVk9RY2J2RG9QWXx8ZW58MHx8fHx8",
     subCategories: ["Crystal Chandeliers", "Modern Chandeliers", "Mini Chandeliers", "Luxury Chandeliers"],
     products: [
       { id: 1, name: "Luxurious Crystal Chandelier", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-01-26+at+08.34.17.jpeg", price: 35000, originalPrice: 45000, discount: 22, rating: 4.8 },
@@ -63,7 +66,8 @@ const categoryData: Record<string, {
   },
   "smart-lights": {
     title: "Smart Lights",
-    description: "Experience the future of lighting with Shree Jee Smart Lights. Control your home's ambiance with your smartphone or voice commands. From color-changing strips to energy-efficient smart bulbs, our smart lighting solutions offer unparalleled convenience and customization for your modern life.",
+    description: "Step into the era of intelligent illumination where your voice and smartphone become the conductor of your home’s atmosphere. Whether it's dimming the mood for a late-night movie or scheduling a sunrise wakeup call with adaptive color temperatures, our smart lighting systems offer effortless control over every photon.",
+    heroImage: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2001&auto=format&fit=crop",
     subCategories: ["Smart Bulbs", "Smart Strips", "Smart Downlights", "Controllers & Hubs"],
     products: [
       { id: 1, name: "Smart Wi-Fi LED Bulb", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/smart_lights/smart1.webp", price: 699, originalPrice: 1299, discount: 46, rating: 4.7 },
@@ -79,7 +83,8 @@ const categoryData: Record<string, {
   },
   "wall-lights": {
     title: "Wall Lights",
-    description: "Enhance your home's ambiance with Shree Jee Wall Lights. Our collection features a variety of styles, from classic sconces to modern minimalist designs. Perfect for creating localized lighting, highlighting architectural features, or adding a decorative touch to any wall.",
+    description: "Define the character of your walls with light as your medium. Our collection of sconces and wall-mounted fixtures adds depth, shadow, and warmth to your interior landscape. From directional reading lights to soft ambient washes, find the perfect accent to highlight your home’s unique architectural features.",
+    heroImage: "https://images.unsplash.com/photo-1620626011761-9963d752ed47?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Wall Sconces", "Modern Wall Lights", "Decorative Wall Lights", "Outdoor Wall Lights"],
     products: [
       { id: 1, name: "Vintage Brass Wall Sconce", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall1.webp", price: 1899, originalPrice: 2999, discount: 36, rating: 4.5 },
@@ -95,7 +100,8 @@ const categoryData: Record<string, {
   },
   "table-lamps": {
     title: "Table Lamps",
-    description: "Illuminate your workspace or bedside with Shree Jee Table Lamps. Our collection offers a blend of functional lighting and decorative appeal, ranging from sleek modern desk lamps to elegant bedside lighting solutions that complement any interior style.",
+    description: "Curate your workstation and bedside with portable art. Each lamp in our collection is a testament to craftsmanship, combining premium materials with light that’s engineered to reduce eye strain while maximizing style. Whether as a focused task light or a gentle evening companion, our table lamps bring elegance to every surface.",
+    heroImage: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Desk Lamps", "Bedside Lamps", "Decorative Lamps", "Architectural Lamps"],
     products: [
       { id: 1, name: "Elegant Ceramic Table Lamp", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/lamps/WhatsApp+Image+2026-01-26+at+08.21.07.jpeg", price: 3499, originalPrice: 4999, discount: 30, rating: 4.5 },
@@ -110,7 +116,8 @@ const categoryData: Record<string, {
   },
   "bathroom-lights": {
     title: "Bathroom Lights",
-    description: "Illuminate your bathroom with Shree Jee Bathroom Lights. Our collection includes a variety of moisture-resistant and fog-resistant lighting solutions, from sleek mirror front lights to waterproof ceiling fixtures. Designed for both style and safety, our bathroom lights ensure your personal space is perfectly lit and elegant.",
+    description: "Transform your daily routine into a sanctuary of clarity. Our moisture-resistant lighting solutions bring spa-like luxury to your personal space, with crisp shadow-free illumination for grooming and soft, dimmable options for ultimate relaxation. Engineered for safety and designed for sophistication.",
+    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Vanity Lights", "Mirror Lights", "Ceiling Lights", "Waterproof Lights"],
     products: [
       { id: 1, name: "Modern Bath Vanity Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bathroom/bathroom1.webp", price: 3499, originalPrice: 4999, discount: 30, rating: 4.5 },
@@ -127,7 +134,8 @@ const categoryData: Record<string, {
   },
   "hanging-lights": {
     title: "Hanging Lights",
-    description: "Discover our broad range of hanging lights at Shree Jee Electrical. Whether you are looking for modern pendant lights for your kitchen island, elegant glass fixtures for your dining room, or industrial-style hanging lamps for your living space, we have the perfect lighting to elevate your home's style.",
+    description: "Create visual rhythm and focal points with our stunning pendant collections. From industrial-chic clusters that command attention over dining tables to minimalist glass orbs that hang with graceful simplicity, our hanging lights are designed to bridge the gap between architectural necessity and high-end decor.",
+    heroImage: "https://images.unsplash.com/photo-1531762948975-73032b7b61f4?q=80&w=1740&auto=format&fit=crop",
     subCategories: ["Pendant Lights", "Cluster Lights", "Industrial Hanging", "Decorative Pendants"],
     products: [
       { id: 1, name: "Modern Industrial Hanging Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/hannging/hanging1.jpg", price: 3499, originalPrice: 4999, discount: 30, rating: 4.5 },
@@ -144,7 +152,8 @@ const categoryData: Record<string, {
   },
   "bedside-lights": {
     title: "Bedside Lights",
-    description: "Create the perfect relaxing atmosphere in your bedroom with Shree Jee Bedside Lights. Our collection features a variety of styles, from sleek modern pendants to classic wall sconces and adjustable reading lamps. Designed for comfort and style, our bedside lights provide the ideal illumination for nighttime reading or winding down.",
+    description: "Design your ultimate midnight sanctuary with lighting that understands the need for peace. Our bedside collection focuses on soft transitions and warm color temperatures, featuring low-glare reading lights and atmospheric sconces that help you wind down without disturbing the quiet of your room.",
+    heroImage: "https://images.unsplash.com/photo-1505693333436-4d4ad93ca961?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Bedside Pendants", "Reading Lights", "Bedside Sconces", "Modern Bedside"],
     products: [
       { id: 1, name: "Modern Bedside Pendant", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bed_lights/bed1.webp", price: 2499, originalPrice: 3499, discount: 28, rating: 4.5 },
@@ -161,7 +170,8 @@ const categoryData: Record<string, {
   },
   "outdoor-lights": {
     title: "Outdoor Lights",
-    description: "Brighten up your exterior spaces with Shree Jee Outdoor Lights. Our collection features durable and weather-resistant lighting solutions, including post lights, garden wall lights, floodlights, and pathway bollards. Designed to withstand the elements while providing superior illumination and style for your garden, patio, or home exterior.",
+    description: "Extend your home’s charm beyond the front door with weather-defying brilliance. Our outdoor fixtures combine rugged durability with high-end allure, offering everything from security-focused floodlighting to enchanting garden paths and architectural wall grazing. Make your exterior as welcoming as your interior.",
+    heroImage: "https://images.unsplash.com/photo-1531110292812-7067087858c5?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Post Lights", "Garden Wall Lights", "Floodlights", "Pathway Bollards", "Security Lights"],
     products: [
       { id: 1, name: "Modern Outdoor Post Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/outdoor_lights/out1.png", price: 3899, originalPrice: 5499, discount: 29, rating: 4.5 },
@@ -178,7 +188,8 @@ const categoryData: Record<string, {
   },
   "strip-lights": {
     title: "Strip Lights",
-    description: "Transform your spaces with Shree Jee LED Strip & Profile Lights. Perfect for cove lighting, cabinet illumination, or creating stunning architectural accents. Our high-quality LED strips and aluminum profiles offer flexible, energy-efficient, and visually striking lighting solutions for any modern interior.",
+    description: "Illuminate the hidden details of your architecture with geometric precision. Our high-density LED strips and sleek aluminum profiles allow you to paint with light—creating futuristic cove glows, sharp cabinet lines, and atmospheric accents that redefine the perception of space in any modern home or office.",
+    heroImage: "https://images.unsplash.com/photo-1565155938148-18e3c4573177?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["LED Strips", "Profile Lights", "COB Strips", "Mounting Profiles"],
     products: [
       { id: 1, name: "Premium Profile LED Strip", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/profile/profile1.webp", price: 1299, originalPrice: 1999, discount: 35, rating: 4.8 },
@@ -194,7 +205,8 @@ const categoryData: Record<string, {
   },
   "string-lights": {
     title: "String Lights",
-    description: "Add a touch of magic to your celebrations with Shree Jee String Lights. Our collection includes classic warm white fairy lights, vibrant multicolor strings, and solar-powered garden lights. Perfect for festivals, parties, or simply creating a cozy atmosphere in your bedroom or patio.",
+    description: "Infuse your celebrations with a touch of stardust. Our decorative string lights are designed to create magical environments, whether you're draping a balcony for a festival, styling a cozy bedroom nook, or setting the mood for an outdoor dinner. Robust, energy-efficient, and endlessly enchanting.",
+    heroImage: "https://images.unsplash.com/photo-1543257580-7269da7816ce?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Fairy Lights", "Decorative Strings", "Festive Lights", "Solar String Lights"],
     products: [
       { id: 1, name: "Classic Warm White String Lights", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/string/string.jpg", price: 499, originalPrice: 899, discount: 44, rating: 4.5 },
@@ -210,7 +222,8 @@ const categoryData: Record<string, {
   },
   "emergency-lights": {
     title: "Emergency Lights",
-    description: "Stay prepared for power outages with Shree Jee Emergency Lights. Our range includes high-intensity rechargeable lanterns, automatic wall-mounted emergency lights, and portable searchlights. Designed for reliability and long battery life, our emergency lighting solutions ensure your safety and comfort during unexpected blackouts.",
+    description: "Safety that never sleeps. When the grid fails, our high-output emergency systems take over instantly. Engineered for reliability during critical moments, our rechargeable lanterns and automatic wall units offer extended battery life and high-visibility illumination to keep your family secure and your business operational.",
+    heroImage: "https://images.unsplash.com/photo-1508514177221-18d19f07ac68?q=80&w=2072&auto=format&fit=crop",
     subCategories: ["Rechargeable Lanterns", "Automatic Emergency Lights", "Solar Emergency Lamps", "Portable Searchlights", "Exit Signs"],
     products: [
       { id: 1, name: "Heavy-Duty Rechargeable Emergency Lantern", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/emergency/emercency.jpg", price: 1299, originalPrice: 1999, discount: 35, rating: 4.8 },
@@ -227,7 +240,8 @@ const categoryData: Record<string, {
   },
   "solar-lights": {
     title: "Solar Lights",
-    description: "Harness the power of the sun with Shree Jee Solar Lights. Our eco-friendly collection includes high-intensity solar street lights, garden lamps, motion sensor security lights, and portable camping kits. Designed for high efficiency and long-lasting performance, our solar lighting solutions provide sustainable and cost-effective illumination for all your outdoor needs.",
+    description: "Harness the sustainable power of the horizon. Our advanced solar collection offers industrial-grade street lighting and charming garden accents that cost zero to run. With high-conversion photovoltaic panels and smart motion sensors, we provide eco-friendly security and beauty that thrives under the sun and shines through the night.",
+    heroImage: "https://images.unsplash.com/photo-1509391366360-fe58f9671754?q=80&w=2072&auto=format&fit=crop",
     subCategories: ["Solar Street Lights", "Garden Lights", "Motion Sensor Lights", "Solar Floodlights", "Camping Lights"],
     products: [
       { id: 1, name: "Master Solar Street Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/solar/solar.avif", price: 3499, originalPrice: 4999, discount: 30, rating: 4.8 },
@@ -244,7 +258,8 @@ const categoryData: Record<string, {
   },
   "picture-lights": {
     title: "Picture Lights",
-    description: "Highlight your favorite artwork and photographs with Shree Jee Picture Lights. Our collection features elegant and adjustable lighting solutions, from classic brass sconces to modern slim LED bars. Designed to provide focused and glare-free illumination, our picture lights add a professional gallery touch to your home decor.",
+    description: "Give your art the stage it deserves. Our precision-engineered picture lights offer professional gallery-grade illumination that eliminates glare and honors the true colors of your masterpieces. With adjustable heads and high-CRI LEDs, we ensure every brushstroke and memory is seen in its best light.",
+    heroImage: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Classic Picture Lights", "Modern LED Art Lights", "Adjustable Sconces", "Gallery Lighting"],
     products: [
       { id: 1, name: "Classic Brass Picture Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/picture/picture.jpg", price: 1899, originalPrice: 2999, discount: 36, rating: 4.7 },
@@ -260,7 +275,8 @@ const categoryData: Record<string, {
   },
   "track-lights": {
     title: "Track Lights",
-    description: "Illuminate your specific spaces with precision using Shree Jee Track Lights. Our collection features versatile track lighting systems with adjustable heads, perfect for highlighting artwork, creating accent lighting in living rooms, or providing professional-grade illumination for commercial spaces and galleries.",
+    description: "Experience ultimate spatial flexibility with modular track systems. Perfect for dynamic environments like modern living rooms or retail showrooms, our track lights allow you to move, rotate, and aim spotlights with precision. Create multiple layers of light from a single source and adapt your ambiance in seconds.",
+    heroImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop",
     subCategories: ["Single Track Heads", "Track Spotlights", "Commercial Track Lighting", "Magnetic Track Lights"],
     products: [
       { id: 1, name: "Commercial LED Track Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/track/track1.avif", price: 1599, originalPrice: 2499, discount: 36, rating: 4.8 },
@@ -276,7 +292,8 @@ const categoryData: Record<string, {
   },
   "bulbs": {
     title: "LED & Decorative Bulbs",
-    description: "Brighten your home with Shree Jee's high-quality LED and decorative bulbs. From energy-efficient everyday LED bulbs to vintage-style filament lamps and smart RGB options, we have the perfect light source for every fixture. Save energy without compromising on style or brightness.",
+    description: "The heart of every fixture, refined. Beyond simple utility, our collection of bulbs includes warm-filament Edison lamps that evoke nostalgia and high-efficiency LED drivers that slash energy bills. Find the specific shape, base, and color temperature to breathe life into your favorite lamps and chandeliers.",
+    heroImage: "https://images.unsplash.com/photo-1520699697851-3dc68aa3a474?q=80&w=1964&auto=format&fit=crop",
     subCategories: ["LED Bulbs", "Filament Bulbs", "Decorative Bulbs", "Smart Bulbs", "Night Bulbs"],
     products: [
       { id: 1, name: "A60 Warm White LED Bulb", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bulb/bulb1.webp", price: 149, originalPrice: 299, discount: 50, rating: 4.8 },
@@ -293,7 +310,8 @@ const categoryData: Record<string, {
   },
   "floor-lamps": {
     title: "Elegant Floor Lamps",
-    description: "Add a statement to your living spaces with Shree Jee's collection of elegant floor lamps. Our range covers everything from minimalist modern designs and industrial tripod lamps to classic fabric-shaded and luxurious crystal pieces. Perfect for reading corners or adding a warm glow to your room.",
+    description: "Command the vertical space of your room with statuesque lighting. Our floor lamps serve as architectural anchors, providing everything from targeted reading light next to your favorite armchair to broad ambient washes that soften large rooms. A perfect blend of commanding presence and delicate illumination.",
+    heroImage: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2067&auto=format&fit=crop",
     subCategories: ["Modern Floor Lamps", "Industrial Lamps", "Tripod Lamps", "Reading Lights", "Designer Lamps"],
     products: [
       { id: 1, name: "Modern Minimalist Floor Lamp", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/floor_lamps/flamps1.webp", price: 4599, originalPrice: 6500, discount: 29, rating: 4.8 },
@@ -310,7 +328,8 @@ const categoryData: Record<string, {
   },
   "tube-lights": {
     title: "LED Tube & Batten Lights",
-    description: "Illuminate your home or office with Shree Jee's energy-efficient LED tube lights and batten lights. Our collection includes classic 20W tubes, slim-fit battens, and industrial-grade lighting solutions. designed for high brightness, long life, and easy installation, our tube lights provide perfect uniform lighting for any space.",
+    description: "Maximize productivity with shadowless, uniform brilliance. Designed for both residential efficiency and industrial performance, our LED battens and tubes offer flicker-free lighting that reduces strain and enhances focus. Experience reliable, high-lumen output in a sleek, easy-to-install form factor.",
+    heroImage: "https://images.unsplash.com/photo-1516140308865-15228b965f3a?q=80&w=1954&auto=format&fit=crop",
     subCategories: ["LED Tube Lights", "LED Battens", "T5 & T8 Tubes", "Slim Fit Lights", "Industrial Battens"],
     products: [
       { id: 1, name: "Classic 20W LED Tube Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/tube_lights/tube1.webp", price: 349, originalPrice: 599, discount: 42, rating: 4.6 },
@@ -331,6 +350,7 @@ const categoryData: Record<string, {
 const defaultCategory = {
   title: "Lighting Products",
   description: "Explore our wide range of premium lighting solutions at Shree Jee Electrical. From modern LED lights to classic designs, find the perfect lighting for every room in your home.",
+  heroImage: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=2070&auto=format&fit=crop",
   subCategories: ["All Types", "LED Lights", "Decorative", "Functional"],
   products: [
     { id: 1, name: "Premium LED Light", image: catProduct1, price: 599, originalPrice: 999, discount: 40, rating: 4.5 },
@@ -383,29 +403,42 @@ const CategoryPage = () => {
       <Header />
 
       {/* Hero Banner */}
-      <section className="relative h-[400px] md:h-[500px]">
+      <section className="relative h-[450px] md:h-[650px] overflow-hidden bg-black">
         <img
-          src={categoryHeroImg}
+          src={category.heroImage}
           alt={category.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-[30s] ease-linear hover:scale-110 brightness-[1.1] contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
+        {/* Multilayered vibrant overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+        
         <div className="absolute inset-0 flex items-center">
-          <div className="container mx-auto px-4">
-            <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                <span className="font-light">Brighten</span> your<br />home
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="max-w-3xl">
+              <div className="overflow-hidden mb-6">
+                <span className="inline-block px-4 py-1 bg-secondary text-white text-[10px] md:text-xs font-black uppercase tracking-[0.4em] rounded-sm shadow-[0_0_20px_rgba(251,191,36,0.3)] animate-reveal-up">
+                  The Gold Standard of Lighting
+                </span>
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-6 leading-[0.85] tracking-tighter drop-shadow-2xl animate-reveal-up delay-100">
+                {category.title.split(' ')[0]} <br />
+                <span className="text-secondary italic font-thin tracking-normal">{category.title.split(' ').slice(1).join(' ') || "Collection"}</span>
               </h1>
-              <p className="text-white/90 text-lg md:text-xl mb-2">
-                with Shree Jee {category.title}
-              </p>
-              <div className="w-16 h-1 bg-secondary mb-4" />
-              <p className="text-white/80 text-lg">
-                Discover our collection now!
+              
+              <div className="w-32 h-2 bg-secondary mb-10 shadow-[0_0_30px_rgba(251,191,36,0.6)] animate-width-grow" />
+              
+              <p className="text-white text-xl md:text-2xl font-medium max-w-xl leading-snug drop-shadow-md border-l-8 border-secondary pl-8 animate-reveal-up delay-200">
+                Experience {category.title} like never before. <br />
+                <span className="text-white/60 text-sm md:text-base font-bold uppercase tracking-widest mt-2 block">Premium Series 2026</span>
               </p>
             </div>
           </div>
         </div>
+        
+        {/* Bottom Decorative Edge */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Breadcrumb */}
@@ -436,7 +469,7 @@ const CategoryPage = () => {
       </section>
 
       {/* Filter Bar */}
-      <section className="py-4 border-y border-border bg-background">
+      {/* <section className="py-4 border-y border-border bg-background">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -457,7 +490,7 @@ const CategoryPage = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Content */}
       <section className="py-8 bg-muted">
@@ -466,7 +499,7 @@ const CategoryPage = () => {
             {/* Sidebar Filters */}
             <aside className={`lg:w-64 flex-shrink-0 ${showFilters ? 'block' : 'hidden lg:block'}`}>
               {/* Sub-Categories */}
-              <div className="mb-8">
+              {/* <div className="mb-8">
                 <h3 className="text-lg font-bold text-foreground mb-4">Sub-Categories</h3>
                 <div className="space-y-3">
                   {category.subCategories.map((subCat) => (
@@ -484,10 +517,10 @@ const CategoryPage = () => {
                     </label>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Price Filter */}
-              <div>
+              {/* <div>
                 <h3 className="text-lg font-bold text-foreground mb-4">Price</h3>
                 <div className="space-y-3">
                   {priceRanges.map((range) => (
@@ -505,7 +538,7 @@ const CategoryPage = () => {
                     </label>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </aside>
 
             {/* Products Grid */}
