@@ -40,7 +40,9 @@ const Index = () => {
         <Features />
  
         <Categories />
+                <LandingStory />
         <Products />
+       
         <BestSellers />
         <WallLights />
         <ShopTheLook />
@@ -48,7 +50,7 @@ const Index = () => {
         <RightLightRightRoom />
         <Inspirations />
         <Partners />
-        <LandingStory />
+ 
         <Testimonials />
         <TrustBadges />
         <Newsletter />
