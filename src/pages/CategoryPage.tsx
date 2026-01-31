@@ -67,7 +67,7 @@ const categoryData: Record<string, {
   "smart-lights": {
     title: "Smart Lights",
     description: "Step into the era of intelligent illumination where your voice and smartphone become the conductor of your home’s atmosphere. Whether it's dimming the mood for a late-night movie or scheduling a sunrise wakeup call with adaptive color temperatures, our smart lighting systems offer effortless control over every photon.",
-    heroImage: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=2001&auto=format&fit=crop",
+    heroImage: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/smart_lights/smart_light_landscape.webp",
     subCategories: ["Smart Bulbs", "Smart Strips", "Smart Downlights", "Controllers & Hubs"],
     products: [
       { id: 1, name: "Smart Wi-Fi LED Bulb", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/smart_lights/smart1.webp", price: 699, originalPrice: 1299, discount: 46, rating: 4.7 },
@@ -84,7 +84,7 @@ const categoryData: Record<string, {
   "wall-lights": {
     title: "Wall Lights",
     description: "Define the character of your walls with light as your medium. Our collection of sconces and wall-mounted fixtures adds depth, shadow, and warmth to your interior landscape. From directional reading lights to soft ambient washes, find the perfect accent to highlight your home’s unique architectural features.",
-    heroImage: "https://images.unsplash.com/photo-1620626011761-9963d752ed47?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall_light_land_1.webp",
     subCategories: ["Wall Sconces", "Modern Wall Lights", "Decorative Wall Lights", "Outdoor Wall Lights"],
     products: [
       { id: 1, name: "Vintage Brass Wall Sconce", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall1.webp", price: 1899, originalPrice: 2999, discount: 36, rating: 4.5 },
@@ -153,7 +153,7 @@ const categoryData: Record<string, {
   "bedside-lights": {
     title: "Bedside Lights",
     description: "Design your ultimate midnight sanctuary with lighting that understands the need for peace. Our bedside collection focuses on soft transitions and warm color temperatures, featuring low-glare reading lights and atmospheric sconces that help you wind down without disturbing the quiet of your room.",
-    heroImage: "https://images.unsplash.com/photo-1505693333436-4d4ad93ca961?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bed_lights/bed_side_landscape.jpg",
     subCategories: ["Bedside Pendants", "Reading Lights", "Bedside Sconces", "Modern Bedside"],
     products: [
       { id: 1, name: "Modern Bedside Pendant", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bed_lights/bed1.webp", price: 2499, originalPrice: 3499, discount: 28, rating: 4.5 },
@@ -171,7 +171,7 @@ const categoryData: Record<string, {
   "outdoor-lights": {
     title: "Outdoor Lights",
     description: "Extend your home’s charm beyond the front door with weather-defying brilliance. Our outdoor fixtures combine rugged durability with high-end allure, offering everything from security-focused floodlighting to enchanting garden paths and architectural wall grazing. Make your exterior as welcoming as your interior.",
-    heroImage: "https://images.unsplash.com/photo-1531110292812-7067087858c5?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1658692051708-519fbdac7e8f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subCategories: ["Post Lights", "Garden Wall Lights", "Floodlights", "Pathway Bollards", "Security Lights"],
     products: [
       { id: 1, name: "Modern Outdoor Post Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/outdoor_lights/out1.png", price: 3899, originalPrice: 5499, discount: 29, rating: 4.5 },
@@ -189,7 +189,7 @@ const categoryData: Record<string, {
   "strip-lights": {
     title: "Strip Lights",
     description: "Illuminate the hidden details of your architecture with geometric precision. Our high-density LED strips and sleek aluminum profiles allow you to paint with light—creating futuristic cove glows, sharp cabinet lines, and atmospheric accents that redefine the perception of space in any modern home or office.",
-    heroImage: "https://images.unsplash.com/photo-1565155938148-18e3c4573177?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://www.jaquar.com/images/uploaded/Profile%20Light%20Ceiling%20Design/Living%20Room%20Profile%20Light%20Ceiling%20Design%20in%20India.png",
     subCategories: ["LED Strips", "Profile Lights", "COB Strips", "Mounting Profiles"],
     products: [
       { id: 1, name: "Premium Profile LED Strip", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/profile/profile1.webp", price: 1299, originalPrice: 1999, discount: 35, rating: 4.8 },
@@ -206,7 +206,7 @@ const categoryData: Record<string, {
   "string-lights": {
     title: "String Lights",
     description: "Infuse your celebrations with a touch of stardust. Our decorative string lights are designed to create magical environments, whether you're draping a balcony for a festival, styling a cozy bedroom nook, or setting the mood for an outdoor dinner. Robust, energy-efficient, and endlessly enchanting.",
-    heroImage: "https://images.unsplash.com/photo-1543257580-7269da7816ce?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1633734605314-ca42706d2e8c?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subCategories: ["Fairy Lights", "Decorative Strings", "Festive Lights", "Solar String Lights"],
     products: [
       { id: 1, name: "Classic Warm White String Lights", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/string/string.jpg", price: 499, originalPrice: 899, discount: 44, rating: 4.5 },
@@ -223,7 +223,7 @@ const categoryData: Record<string, {
   "emergency-lights": {
     title: "Emergency Lights",
     description: "Safety that never sleeps. When the grid fails, our high-output emergency systems take over instantly. Engineered for reliability during critical moments, our rechargeable lanterns and automatic wall units offer extended battery life and high-visibility illumination to keep your family secure and your business operational.",
-    heroImage: "https://images.unsplash.com/photo-1508514177221-18d19f07ac68?q=80&w=2072&auto=format&fit=crop",
+    heroImage: "https://lightingequipmentsales.com/wp-content/uploads/2017/12/Emergency-Lighting-740x416.jpg",
     subCategories: ["Rechargeable Lanterns", "Automatic Emergency Lights", "Solar Emergency Lamps", "Portable Searchlights", "Exit Signs"],
     products: [
       { id: 1, name: "Heavy-Duty Rechargeable Emergency Lantern", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/emergency/emercency.jpg", price: 1299, originalPrice: 1999, discount: 35, rating: 4.8 },
@@ -241,7 +241,7 @@ const categoryData: Record<string, {
   "solar-lights": {
     title: "Solar Lights",
     description: "Harness the sustainable power of the horizon. Our advanced solar collection offers industrial-grade street lighting and charming garden accents that cost zero to run. With high-conversion photovoltaic panels and smart motion sensors, we provide eco-friendly security and beauty that thrives under the sun and shines through the night.",
-    heroImage: "https://images.unsplash.com/photo-1509391366360-fe58f9671754?q=80&w=2072&auto=format&fit=crop",
+    heroImage: "https://www.treehugger.com/thmb/4yxv7u2AV2XtPr0Gb9WI63Imjpk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/solar-battery-and-lantern-in-park-close-up-side-view--1278723493-62ab2d005551488a9deba315f4e5b91b.jpg",
     subCategories: ["Solar Street Lights", "Garden Lights", "Motion Sensor Lights", "Solar Floodlights", "Camping Lights"],
     products: [
       { id: 1, name: "Master Solar Street Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/solar/solar.avif", price: 3499, originalPrice: 4999, discount: 30, rating: 4.8 },
@@ -259,7 +259,7 @@ const categoryData: Record<string, {
   "picture-lights": {
     title: "Picture Lights",
     description: "Give your art the stage it deserves. Our precision-engineered picture lights offer professional gallery-grade illumination that eliminates glare and honors the true colors of your masterpieces. With adjustable heads and high-CRI LEDs, we ensure every brushstroke and memory is seen in its best light.",
-    heroImage: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://plus.unsplash.com/premium_photo-1681487106969-06463e969cea?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subCategories: ["Classic Picture Lights", "Modern LED Art Lights", "Adjustable Sconces", "Gallery Lighting"],
     products: [
       { id: 1, name: "Classic Brass Picture Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/picture/picture.jpg", price: 1899, originalPrice: 2999, discount: 36, rating: 4.7 },
@@ -276,7 +276,7 @@ const categoryData: Record<string, {
   "track-lights": {
     title: "Track Lights",
     description: "Experience ultimate spatial flexibility with modular track systems. Perfect for dynamic environments like modern living rooms or retail showrooms, our track lights allow you to move, rotate, and aim spotlights with precision. Create multiple layers of light from a single source and adapt your ambiance in seconds.",
-    heroImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop",
+    heroImage: "https://images.unsplash.com/photo-1526116638181-d787e552d669?q=80&w=1456&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     subCategories: ["Single Track Heads", "Track Spotlights", "Commercial Track Lighting", "Magnetic Track Lights"],
     products: [
       { id: 1, name: "Commercial LED Track Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/track/track1.avif", price: 1599, originalPrice: 2499, discount: 36, rating: 4.8 },
@@ -293,7 +293,7 @@ const categoryData: Record<string, {
   "bulbs": {
     title: "LED & Decorative Bulbs",
     description: "The heart of every fixture, refined. Beyond simple utility, our collection of bulbs includes warm-filament Edison lamps that evoke nostalgia and high-efficiency LED drivers that slash energy bills. Find the specific shape, base, and color temperature to breathe life into your favorite lamps and chandeliers.",
-    heroImage: "https://images.unsplash.com/photo-1520699697851-3dc68aa3a474?q=80&w=1964&auto=format&fit=crop",
+    heroImage: "https://media.istockphoto.com/id/478131494/photo/evolution-of-lamps-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=xna3tSXrq-1axG9M04_u4jz-owhRM2gYlME1Yw7Gc_w=",
     subCategories: ["LED Bulbs", "Filament Bulbs", "Decorative Bulbs", "Smart Bulbs", "Night Bulbs"],
     products: [
       { id: 1, name: "A60 Warm White LED Bulb", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bulb/bulb1.webp", price: 149, originalPrice: 299, discount: 50, rating: 4.8 },
@@ -329,7 +329,7 @@ const categoryData: Record<string, {
   "tube-lights": {
     title: "LED Tube & Batten Lights",
     description: "Maximize productivity with shadowless, uniform brilliance. Designed for both residential efficiency and industrial performance, our LED battens and tubes offer flicker-free lighting that reduces strain and enhances focus. Experience reliable, high-lumen output in a sleek, easy-to-install form factor.",
-    heroImage: "https://images.unsplash.com/photo-1516140308865-15228b965f3a?q=80&w=1954&auto=format&fit=crop",
+    heroImage: "https://onecube.in/cdn/shop/files/Screenshot_2025-06-12_at_12.58.25_PM.png?v=1749713414",
     subCategories: ["LED Tube Lights", "LED Battens", "T5 & T8 Tubes", "Slim Fit Lights", "Industrial Battens"],
     products: [
       { id: 1, name: "Classic 20W LED Tube Light", image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/tube_lights/tube1.webp", price: 349, originalPrice: 599, discount: 42, rating: 4.6 },
@@ -413,7 +413,7 @@ const CategoryPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
         
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 flex items-center pt-20 md:pt-24">
           <div className="container mx-auto px-6 md:px-12">
             <div className="max-w-3xl">
               <div className="overflow-hidden mb-6">
