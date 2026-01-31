@@ -10,63 +10,71 @@ const partners = [
     name: "Philips", 
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Philips_logo.svg/1280px-Philips_logo.svg.png",
     description: "World leader in lighting, providing energy-efficient solutions.",
-    catalogUrl: "#",
+    catalogUrl: "https://www.ecolinklighting.com/product_pdf/EcoLink_Product_Booklet_new.pdf",
     color: "from-amber-200/40 to-amber-100/40"
   },
   { 
     name: "Havells", 
     logo: "https://companieslogo.com/img/orig/HAVELLS.NS_BIG-50b8b1af.png?t=1745677675",
     description: "Leading Fast Moving Electrical Goods (FMEG) Company.",
-    catalogUrl: "#",
+    catalogUrl: "https://havells.com/media/wysiwyg/Brochure-and-pricelist/Switches/Havells_Crabtree_Accessories.pdf",
     color: "from-yellow-200/40 to-amber-100/40"
   },
   { 
     name: "Schneider", 
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Schneider-Electric-Logo.jpg",
     description: "Digital transformation of energy management and automation.",
-    catalogUrl: "#",
+    catalogUrl: "https://download.schneider-electric.com/files?p_Doc_Ref=SE11998&p_enDocType=Catalog&p_File_Name=Diffuse+FD+Catalogue+0.5.pdf",
     color: "from-amber-100/40 to-yellow-50/40"
   },
   { 
     name: "RR Signature", 
     logo: "https://mma.prnewswire.com/media/530944/RR_Kabel_Logo.jpg?p=twitter",
     description: "Premier choice for architectural and decorative lighting.",
-    catalogUrl: "#",
+    catalogUrl: "https://catalogue.rrkabel.com/rr-signature/",
+    
     color: "from-amber-200/40 to-primary/20"
   },
   { 
     name: "Luminous", 
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6zrilFWWwdct-Swtei2WDtOgKImxB7pD7lA&s",
     description: "Powerful inverter and battery solutions for your home.",
-    catalogUrl: "#",
+    catalogUrl: "https://www.rrkabel.com/wp-content/uploads/2024/04/RR-Signature-Fan-Catalogue-1-1-1.pdf",
     color: "from-yellow-200/40 to-amber-100/40"
   },
   { 
     name: "Havells Standard", 
     logo: "https://havells.com/media/wysiwyg/Standard.jpg",
     description: "Trusted standards in switchgear and electrical products.",
-    catalogUrl: "#",
+    catalogUrl: "https://standardelectricals.com/media/wysiwyg/standard-brochure-pricelist/Standard_Switches_DomesticSwitchgear_Combine.pdf",
     color: "from-amber-200/40 to-primary/20"
   },
   { 
     name: "Polycab Wires", 
     logo: "https://static.wixstatic.com/media/78663d_378a8a4925084c029cc420095ed30c3f~mv2.jpg/v1/fill/w_1000,h_398,al_c,q_90/file.jpg",
     description: "High-quality wires and cables for secure electrical networks.",
-    catalogUrl: "#",
+    catalogUrl: "https://cms.polycab.com/media/q33mxdlf/house-wires-catalogue-with-suprema-march-25.pdf",
     color: "from-amber-100/40 to-yellow-50/40"
   },
   { 
     name: "L&T Switchgear", 
     logo: "https://5.imimg.com/data5/SELLER/Default/2024/4/410342854/DX/VK/HZ/14408247/download.png",
     description: "Precision engineered switchgear and control products.",
-    catalogUrl: "#",
+    catalogUrl: "https://rajelectricals.co.in/wp-content/uploads/2024/07/LT-Main-Price-List-01.05.2024.pdf",
     color: "from-amber-200/40 to-amber-100/40"
   },
   {
     name:"Panova",
     logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI3gCHXYbI6lUbT0BoOfWbN6n965ySjx-xHQ&s",
     description:"",
-    catalogUrl:"#",
+    catalogUrl:"https://ln5.sync.com/dl/cf57eab30#w85mzcvz-bd4ihi4s-y7uei8c7-8xfnsn5n",
+    color:"from-amber-200/40 to-amber-100/40"
+  },
+  {
+    name :"RAJ COOLING SYSTEMS",
+    logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcaHl5CMKWWYsbcg4n2WfNx4ZgfrihJAYqxA&s",
+    description:"",
+    catalogUrl:"https://rajcooling.com/wp-content/uploads/2023/12/Raj-New-Domestic_brocher_07-11-2023.pdf",
     color:"from-amber-200/40 to-amber-100/40"
   }
 ];

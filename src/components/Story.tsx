@@ -35,7 +35,7 @@ const stories = [
     year: "2023",
     title: "The Experience Center",
     description: "Launched our flagship showroom—a sensory gallery where light is art. A space designed not for shopping, but for feeling the impact of illumination.",
-    image: "https://images.pexels.com/photos/30434802/pexels-photo-30434802.jpeg", // Using one of the existing good images
+    image: "https://images.pexels.com/photos/30434802/pexels-photo-30434802.jpeg",
     icon: Award
   },
   {
@@ -58,9 +58,9 @@ const Story = () => {
 
   return (
     <section ref={containerRef} className="py-20 md:py-32 bg-gray-900 overflow-hidden relative">
-      {/* Background Elements */}
+      {/* Background Glows */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[10%] left-[20%] w-72 h-72 bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute top-[10%] left-[20%] w-72 h-72 bg-yellow-500/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]" />
       </div>
 
@@ -72,8 +72,8 @@ const Story = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-24 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6">
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-xs">Our Journey</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 backdrop-blur-sm mb-6">
+            <span className="text-yellow-500 font-bold uppercase tracking-[0.2em] text-xs">Our Journey</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
             Decades of <br/>
@@ -85,22 +85,22 @@ const Story = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Central Line */}
+          {/* Central Progress Line */}
           <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2 md:translate-x-0">
              <motion.div 
                 style={{ scaleY, transformOrigin: "top" }}
-                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary via-yellow-400 to-primary box-shadow-[0_0_20px_rgba(255,215,0,0.5)]"
+                className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-yellow-600 via-yellow-400 to-amber-500 shadow-[0_0_15px_rgba(251,191,36,0.5)]"
              />
           </div>
 
-          <div className="space-y-12 md:space-y-24">
+          <div className="space-y-12 md:space-y-32">
             {stories.map((story, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div key={index} className={`relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-0`}>
                   
-                  {/* Date Bubble Mobile - Absolute positioned on the line */}
-                  <div className="absolute left-[20px] md:left-1/2 top-0 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-gray-900 bg-primary shadow-lg shadow-primary/50 z-20 md:h-14 md:w-14">
+                  {/* Icon Bubble */}
+                  <div className="absolute left-[20px] md:left-1/2 top-0 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full border-4 border-gray-900 bg-yellow-500 shadow-lg shadow-yellow-500/20 z-20 md:h-14 md:w-14">
                     <story.icon className="text-gray-900 w-4 h-4 md:w-6 md:h-6" strokeWidth={2.5} />
                   </div>
 
@@ -109,15 +109,15 @@ const Story = () => {
                     <motion.div 
                       initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6 }}
                       className={`text-left ${isEven ? 'md:text-left' : 'md:text-right'}`}
                     >
                       <span className="text-6xl md:text-8xl font-black text-white/5 absolute -top-10 md:-top-16 select-none leading-none z-0 mix-blend-overlay">
                         {story.year}
                       </span>
                       <div className="relative z-10">
-                        <span className="text-primary font-bold tracking-widest text-sm uppercase mb-2 block">{story.year}</span>
+                        <span className="text-yellow-500 font-bold tracking-widest text-sm uppercase mb-2 block">{story.year}</span>
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{story.title}</h3>
                         <p className="text-gray-400 leading-relaxed max-w-md ml-0 md:ml-auto md:mr-0 inline-block">
                            {story.description}
@@ -126,21 +126,36 @@ const Story = () => {
                     </motion.div>
                   </div>
 
-                  {/* Image Side */}
+                  {/* Image Side - The "Illuminating" Part */}
                   <div className="w-full md:w-[50%] pl-16 md:pl-0 md:px-12">
                      <motion.div
-                       initial={{ opacity: 0, scale: 0.8, rotate: isEven ? -2 : 2 }}
-                       whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                       viewport={{ once: true, margin: "-50px" }}
-                       transition={{ duration: 0.8 }}
+                       initial={{ 
+                         opacity: 0, 
+                         scale: 0.9, 
+                         filter: "grayscale(100%) brightness(0.5)",
+                         boxShadow: "0 0 0px rgba(251, 191, 36, 0)"
+                       }}
+                       whileInView={{ 
+                         opacity: 1, 
+                         scale: 1, 
+                         filter: "grayscale(0%) brightness(1)",
+                         boxShadow: "0 20px 50px rgba(0, 0, 0, 0.5)"
+                       }}
+                       viewport={{ once: false, amount: 0.4 }}
+                       transition={{ duration: 0.8, ease: "easeOut" }}
                        className="relative group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
                      >
-                        <div className="absolute inset-0 bg-primary/20 mix-blend-color opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                        <img 
+                        {/* Hover Overlay Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                        
+                        <motion.img 
                           src={story.image} 
                           alt={story.title} 
-                          className="w-full aspect-video md:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                          className="w-full aspect-video md:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                         />
+
+                        {/* Glossy Reflection Effect */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-tr from-transparent via-white/5 to-transparent z-20 pointer-events-none" />
                      </motion.div>
                   </div>
 

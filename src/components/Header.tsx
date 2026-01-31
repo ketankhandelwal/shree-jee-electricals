@@ -84,7 +84,7 @@ const Header = () => {
         scrolled ? "h-0" : "h-10"
       }`}>
         <p className="text-[10px] md:text-xs font-medium tracking-wider px-4 text-center">
-          Free Delivery above ₹4,999 • <span className="text-primary font-bold">Diwali Sale Live!</span>
+          Free Delivery above ₹4,999 • <span className="text-primary font-bold">HOLI Sale Live!</span>
         </p>
       </div>
 
