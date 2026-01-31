@@ -6,8 +6,8 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Philips Wi-Fi HDMI Sync Box + TV Backlight Strip",
-    image: "https://plus.unsplash.com/premium_photo-1661962510600-6c61b1aa7b0b?q=80&w=1222&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Vintage Brass Wall Sconce",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall1.webp",
     price: 12499,
     originalPrice: 17499,
     discount: 29,
@@ -15,8 +15,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Philips StepGlow Step Light",
-    image: "https://plus.unsplash.com/premium_photo-1682125916388-2a005de0d6b5?q=80&w=1612&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Decorative Crystal Wall Light",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall5.webp",
     price: 459,
     originalPrice: 730,
     discount: 38,
@@ -24,8 +24,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Philips Full Glow LED Surface Light",
-    image: "https://plus.unsplash.com/premium_photo-1661962449952-29741f7dbbc4?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Artistic Geometric Wall Lamp",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/wall_lights/wall9.webp",
     price: 487,
     originalPrice: 775,
     discount: 38,

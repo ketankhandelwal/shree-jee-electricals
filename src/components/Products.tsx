@@ -6,8 +6,8 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Philips Wi-Fi HDMI Sync Box + TV Backlight Strip",
-    image: "https://images.unsplash.com/photo-1685735852762-e1325a20da68?w=900&auto=format&fit=crop&q=60",
+    name: "Luxurious Crystal Chandelier",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-01-26+at+08.34.17.jpeg",
     price: 12499,
     originalPrice: 17499,
     discount: 29,
@@ -15,8 +15,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Philips StepGlow Step Light",
-    image: "https://images.unsplash.com/photo-1764454221394-0a954d2fae9e?w=900&auto=format&fit=crop&q=60",
+    name: "Smart Wi-Fi LED Bulb",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/smart_lights/smart1.webp",
     price: 459,
     originalPrice: 730,
     discount: 38,
@@ -24,8 +24,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Philips Full Glow LED Surface Light",
-    image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=900&auto=format&fit=crop&q=60",
+    name: "Modern Bath Vanity Light",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/bathroom/bathroom1.webp",
     price: 487,
     originalPrice: 775,
     discount: 38,

@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "Philips Wi-Fi HDMI Sync Box + TV Backlight Strip",
-    image: "https://images.unsplash.com/photo-1568102106687-13401de952dc?w=900&auto=format&fit=crop&q=60",
+    name: "Modern Industrial Hanging Light",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/hannging/hanging1.jpg",
     price: 12499,
     originalPrice: 17499,
     discount: 29,
@@ -14,8 +14,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Philips StepGlow Step Light",
-    image: "https://plus.unsplash.com/premium_photo-1661902934269-17eaf4b04f9f?w=900&auto=format&fit=crop&q=60",
+    name: "Premium Profile LED Strip",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/profile/profile1.webp",
     price: 459,
     originalPrice: 730,
     discount: 38,
@@ -23,8 +23,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Philips Full Glow LED Surface Light",
-    image: "https://plus.unsplash.com/premium_photo-1661876403473-64980cbfdf0f?q=80&w=1740&auto=format&fit=crop",
+    name: "Commercial LED Track Light",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/track/track1.avif",
     price: 487,
     originalPrice: 775,
     discount: 38,
