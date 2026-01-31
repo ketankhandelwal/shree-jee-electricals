@@ -3,15 +3,22 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Calendar, CheckCircle2, Award, Zap, Building2, Globe } from "lucide-react";
 
 const stories = [
+    {
+    year: "2025",
+    title: "SAGAR RATNA PRATAPGARH",
+    description: "Celebrating a decade of excellence at Hotel Pratapgarh, proudly hosting thousands of guests with warmth and distinction. The journey has only just begun.",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/sagar_ratna/sagar_ratna.webp",
+    icon: CheckCircle2
+  },
   {
-    year: "2014",
-    title: "The Spark",
-    description: "Shree Jee Electricals began as a humble vision to provide quality electrical solutions to our local community. A small store with big dreams.",
-    image: "https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg",
+    year: "2024",
+    title: "LAKME PRATAPGARH",
+    description: "LAKME Pratapgarh marked a milestone project, where modern retail aesthetics met precise electrical execution. Shree Jee Electricals delivered reliable, high-quality solutions tailored to Lakme’s premium brand standards.",
+    image: "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/sagar_ratna/lakme/lakme.avif",
     icon: Calendar
   },
   {
-    year: "2016",
+    year: "2022",
     title: "Commercial Excellence",
     description: "Secured our first major commercial contract, lighting up the city's premier shopping complex. This marked our entry into large-scale infrastructure projects.",
     image: "https://images.pexels.com/photos/220639/pexels-photo-220639.jpeg",
@@ -25,26 +32,20 @@ const stories = [
     icon: Zap
   },
   {
-    year: "2021",
+    year: "2018",
     title: "Global Partnerships",
     description: "Forged strategic alliances with international lighting giants, bringing world-class aesthetics and European safety standards to local homes.",
     image: "https://images.pexels.com/photos/9242900/pexels-photo-9242900.jpeg",
     icon: Globe
   },
   {
-    year: "2023",
+    year: "2014",
     title: "The Experience Center",
     description: "Launched our flagship showroom—a sensory gallery where light is art. A space designed not for shopping, but for feeling the impact of illumination.",
     image: "https://images.pexels.com/photos/30434802/pexels-photo-30434802.jpeg",
     icon: Award
-  },
-  {
-    year: "2024",
-    title: "50,000+ Happy Spaces",
-    description: "Celebrating a decade of excellence with over 50,000 homes and businesses illuminated by our expertise. The journey has only just begun.",
-    image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg",
-    icon: CheckCircle2
   }
+
 ];
 
 const Story = () => {
