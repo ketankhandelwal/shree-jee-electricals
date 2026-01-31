@@ -98,14 +98,26 @@ const Header = () => {
           <div className="flex items-center justify-between h-14">
             
             {/* Logo */}
-            <Link to="/" className="flex items-center group">
+            <Link to="/" className="flex items-center gap-3 group">
               <img 
                 src={logo} 
                 alt="SHREE JEE Electricals" 
-                className={`transition-all duration-300 ${
-                  scrolled ? "h-10" : "h-20"
+                className={`transition-all duration-300 object-contain ${
+                  scrolled ? "h-10" : "h-16 md:h-20"
                 }`}
               />
+              <div className="flex flex-col">
+                <span className={`font-black tracking-tighter leading-none transition-all duration-300 ${
+                  scrolled ? "text-lg text-gray-900" : "text-xl md:text-2xl text-white"
+                }`}>
+                  SHREE <span className="text-primary">JEE</span>
+                </span>
+                <span className={`font-bold tracking-[0.2em] uppercase transition-all duration-300 ${
+                  scrolled ? "text-[8px] text-primary" : "text-[10px] text-primary"
+                }`}>
+                  Electricals
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Nav */}

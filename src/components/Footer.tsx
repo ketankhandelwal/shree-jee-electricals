@@ -77,11 +77,11 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <h3 className="text-2xl font-black tracking-tighter">SHREE JEE</h3>
-                <p className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase">Electrical</p>
+                <h3 className="text-2xl font-black tracking-tighter uppercase">SHREE <span className="text-primary">JEE</span></h3>
+                <p className="text-[10px] font-bold text-gray-500 tracking-[0.3em] uppercase">Electricals</p>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-8">
-                Illuminating spaces with elegance since 2010. We provide premium, energy-efficient lighting solutions tailored for modern Indian homes and commercial spaces.
+                Illuminating spaces with elegance since 2014. We provide premium, energy-efficient lighting solutions tailored for modern Indian homes and commercial spaces.
               </p>
               <div className="flex gap-4">
                 <a 
