@@ -13,6 +13,7 @@ import Catalog from "./pages/Catalog";
 import StoryPage from "./pages/StoryPage";
 
 import ScrollToHash from "./components/ScrollToHash";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -27,22 +28,23 @@ const App = () => {
           <Routes>
             {/* Home Page */}
             <Route path="/" element={<Index />} />
-            
+
             {/* Dynamic Category Pages - replaces old individual category routes */}
             <Route path="/category/:categorySlug" element={<CategoryPage />} />
-            
+
             {/* Product Detail Page */}
             <Route path="/product/:id" element={<ProductDetailPage />} />
-            
+
             {/* Static Pages */}
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/catalogs" element={<Catalog />} />
             <Route path="/story" element={<StoryPage />} />
-            
+
             {/* 404 - Must be last */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <WhatsAppButton />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

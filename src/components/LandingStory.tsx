@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, CheckCircle2, Award, Zap, Building2, Globe, ArrowRight } from "lucide-react";
+import { Calendar, CheckCircle2, Award, Zap, Globe, ArrowRight, Maximize2 } from "lucide-react";
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 
 const milestones = [
   {
@@ -26,7 +33,7 @@ const milestones = [
       "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/devansh_resort/WhatsApp+Image+2026-02-04+at+08.42.54+(2).jpeg",
 
     ],
-    icon: Building2,
+
     color: "from-amber-500 to-yellow-600"
   },
   {
@@ -34,7 +41,7 @@ const milestones = [
     title: "Sagar Ratna Pratapgarh",
     description: "Completed a decade-long association with Hotel Sagar Ratna Pratapgarh — delivering reliable electrical systems, lighting upgrades, and ongoing maintenance that contributed to thousands of memorable guest experiences.",
     images: ["https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/sagar_ratna/sagar_ratna.webp"],
-    icon: CheckCircle2,
+
     color: "from-amber-400 to-amber-600"
   },
   {
@@ -51,7 +58,7 @@ const milestones = [
       "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/mayur_palace/WhatsApp+Image+2026-02-04+at+09.16.18.jpeg",
       "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/mayur_palace/WhatsApp+Image+2026-02-04+at+09.16.19.jpeg"
     ],
-    icon: Zap,
+
     color: "from-yellow-300 to-amber-500"
   },
 
@@ -66,7 +73,7 @@ const milestones = [
       "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/comfort_inn/WhatsApp+Image+2026-02-04+at+09.14.37.jpeg",
       "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/comfort_inn/WhatsApp+Image+2026-02-04+at+09.14.38.jpeg"
     ],
-    icon: Award,
+
     color: "from-amber-600 to-orange-700"
   },
   {
@@ -74,7 +81,7 @@ const milestones = [
     title: "Lakme Pratapgarh",
     description: "Delivered end-to-end premium electrical and lighting solutions for Lakmé Salon Pratapgarh — combining modern aesthetics, energy-efficient design, and flawless execution for one of the world’s most trusted beauty brands.",
     images: ["https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/projects/sagar_ratna/lakme/lakme.avif"],
-    icon: Calendar,
+
     color: "from-yellow-400 to-orange-500"
   },
 
@@ -84,10 +91,19 @@ const milestones = [
 const LandingStory = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState<{ src: string }[]>([]);
+  const [galleryStartIndex, setGalleryStartIndex] = useState(0);
 
   const handleTabChange = (index: number) => {
     setActiveTab(prev => (prev === index ? -1 : index));
     setCurrentImageIndex(0);
+  };
+
+  const openGallery = (images: string[], index: number) => {
+    setGalleryImages(images.map(src => ({ src })));
+    setGalleryStartIndex(index);
+    setIsGalleryOpen(true);
   };
 
   return (
@@ -115,7 +131,6 @@ const LandingStory = () => {
         <div className="max-w-5xl mx-auto space-y-6">
           {milestones.map((ms, index) => {
             const isActive = activeTab === index;
-            const Icon = ms.icon;
 
             return (
               <div
@@ -176,7 +191,8 @@ const LandingStory = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="w-full h-full object-cover transition-transform duration-[2s] group-hover/img:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-[2s] group-hover/img:scale-110 cursor-zoom-in"
+                                onClick={() => openGallery(ms.images, currentImageIndex)}
                               />
                             </AnimatePresence>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -211,18 +227,28 @@ const LandingStory = () => {
                                 {ms.images.map((_, i) => (
                                   <div
                                     key={i}
-                                    className={`h-1.5 rounded-full transition-all duration-300 ${i === currentImageIndex ? "w-8 bg-primary" : "w-1.5 bg-white/30"
+                                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === currentImageIndex ? "w-8 bg-primary" : "w-1.5 bg-white/30"
                                       }`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setCurrentImageIndex(i);
+                                    }}
                                   />
                                 ))}
                               </div>
                             )}
 
-                            {/* Icon Badge on Image */}
-                            <div className="absolute top-8 right-8">
-                              <div className={`p-5 rounded-3xl bg-gradient-to-br ${ms.color} shadow-2xl shadow-black/40 backdrop-blur-xl border border-white/20`}>
+                            {/* Icon & Action Grid */}
+                            <div className="absolute top-8 right-8 flex gap-3">
+                              <button
+                                onClick={() => openGallery(ms.images, currentImageIndex)}
+                                className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all shadow-xl"
+                              >
+                                <Maximize2 className="w-6 h-6" />
+                              </button>
+                              {/* <div className={`p-5 rounded-3xl bg-gradient-to-br ${ms.color} shadow-2xl shadow-black/40 backdrop-blur-xl border border-white/20`}>
                                 <Icon className="w-8 h-8 text-white" />
-                              </div>
+                              </div> */}
                             </div>
 
                             {/* Year Watermark on Image */}
@@ -261,6 +287,25 @@ const LandingStory = () => {
           })}
         </div>
       </div>
+
+      <Lightbox
+        open={isGalleryOpen}
+        close={() => setIsGalleryOpen(false)}
+        slides={galleryImages}
+        index={galleryStartIndex}
+        plugins={[Zoom, Thumbnails, Fullscreen]}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          keyboardMoveDistance: 50,
+          wheelZoomDistanceFactor: 100,
+          pinchZoomDistanceFactor: 100,
+          scrollToZoom: true,
+        }}
+      />
     </section>
   );
 };
