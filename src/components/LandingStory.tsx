@@ -180,7 +180,8 @@ const LandingStory = () => {
                             initial={{ scale: 0.95, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
-                            className="relative aspect-[4/3] md:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl group/img"
+                            className="relative aspect-[4/3] md:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl group/img cursor-pointer"
+                            onClick={() => openGallery(ms.images, currentImageIndex)}
                           >
                             <AnimatePresence mode="wait">
                               <motion.img
@@ -191,11 +192,10 @@ const LandingStory = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="w-full h-full object-cover transition-transform duration-[2s] group-hover/img:scale-110 cursor-zoom-in"
-                                onClick={() => openGallery(ms.images, currentImageIndex)}
+                                className="w-full h-full object-cover transition-transform duration-[2s] group-hover/img:scale-110"
                               />
                             </AnimatePresence>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
 
                             {/* Navigation Arrows for Gallery */}
                             {ms.images.length > 1 && (
@@ -241,7 +241,10 @@ const LandingStory = () => {
                             {/* Icon & Action Grid */}
                             <div className="absolute top-8 right-8 flex gap-3">
                               <button
-                                onClick={() => openGallery(ms.images, currentImageIndex)}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  openGallery(ms.images, currentImageIndex);
+                                }}
                                 className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all shadow-xl"
                               >
                                 <Maximize2 className="w-6 h-6" />
@@ -252,7 +255,7 @@ const LandingStory = () => {
                             </div>
 
                             {/* Year Watermark on Image */}
-                            <div className="absolute bottom-8 right-10 select-none">
+                            <div className="absolute bottom-8 right-10 select-none pointer-events-none">
                               <span className="text-white/20 text-6xl md:text-9xl font-black italic tracking-tighter">
                                 {ms.year}
                               </span>
