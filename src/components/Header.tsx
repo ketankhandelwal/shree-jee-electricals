@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Search, Star, Menu, X, ChevronRight, Sparkles, ExternalLink } from "lucide-react";
+import { Search, Star, PenLine, Menu, X, ChevronRight, Sparkles, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import { useNavigate, Link } from "react-router-dom";
@@ -145,15 +145,12 @@ const Header = () => {
                 href="https://search.google.com/local/writereview?placeid=ChIJ6Q7wHjyRmjkRBAYRek8QSG8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide border-2 transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm ${scrolled
-                  ? "border-primary text-primary hover:bg-primary hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-primary"
+                className={`inline-flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 ${scrolled ? "text-primary" : "text-white"
                   }`}
               >
-                <Star className="h-3.5 w-3.5 fill-current" />
-                Add Review
-                <ExternalLink className="h-3 w-3 opacity-70" />
+                <PenLine className="h-5 w-5" />
               </a>
+
               <Button
                 variant="ghost"
                 size="icon"
