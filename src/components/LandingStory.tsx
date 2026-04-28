@@ -12,6 +12,18 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 const milestones = [
   {
     year: "2026",
+    title: "HYUNDAI SHOWROOM, PRATAPGARH",
+    description: "Powered the showroom floor with precision — delivering a complete electrical and lighting solution for Hyundai Pratapgarh that blends brilliance with sophistication, creating an atmosphere where every car shines as it deserves.",
+    images: [
+      "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-04-27+at+23.16.01.jpeg",
+      "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-04-27+at+23.16.00.jpeg",
+      "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-04-27+at+23.16.00+(1).jpeg",
+      "https://shree-jee-electricals.s3.ap-south-1.amazonaws.com/images/WhatsApp+Image+2026-04-27+at+23.16.00+(2).jpeg",
+    ],
+    color: "from-blue-500 to-blue-700"
+  },
+  {
+    year: "2026",
     title: "DEVANSH RESORT",
     description: "Successfully executed our largest commercial lighting & electrical project to date — transforming Devansh Resort into a landmark of elegance and modern functionality with state-of-the-art lighting design and complete electrical infrastructure.",
     images: [
